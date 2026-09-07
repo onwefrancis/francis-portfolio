@@ -78,6 +78,7 @@
       es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
     }, { threshold: 0.12 });
     rvs.forEach(function (n) { io.observe(n); });
+    document.querySelectorAll(".tl").forEach(function (n) { io.observe(n); });
   } else {
     rvs.forEach(function (n) { n.classList.add("in"); });
   }
