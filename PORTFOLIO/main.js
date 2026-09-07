@@ -1,15 +1,48 @@
-/* Onwe Francis Chiemerie — portfolio interactions (vanilla, no deps) */
+/* Onwe Francis Chiemerie — portfolio v2 interactions (vanilla, no deps) */
 (function () {
   "use strict";
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* top bar border on scroll */
+  /* ---- theme switcher (light / dark), persisted ---- */
+  var themeBtn = document.getElementById("themeBtn");
+  var applyTheme = function (t) {
+    if (t === "light") document.documentElement.dataset.theme = "light";
+    else delete document.documentElement.dataset.theme;
+    try { localStorage.setItem("pf-theme", t); } catch (e) {}
+    if (themeBtn) themeBtn.textContent = t === "light" ? "☀️" : "🌙";
+    var mc = document.querySelector('meta[name="theme-color"]');
+    if (mc) mc.content = t === "light" ? "#f4f1e9" : "#0a0f0d";
+  };
+  var current = (function () { try { return localStorage.getItem("pf-theme") || "dark"; } catch (e) { return "dark"; } })();
+  applyTheme(current);
+  if (themeBtn) themeBtn.addEventListener("click", function () {
+    current = current === "light" ? "dark" : "light";
+    applyTheme(current);
+  });
+
+  /* ---- mobile dropdown menu ---- */
+  var burger = document.getElementById("burger");
+  var mmenu = document.getElementById("mmenu");
+  if (burger && mmenu) {
+    var setMenu = function (open) {
+      mmenu.classList.toggle("open", open);
+      burger.setAttribute("aria-expanded", String(open));
+      burger.textContent = open ? "✕" : "☰";
+    };
+    burger.addEventListener("click", function () { setMenu(!mmenu.classList.contains("open")); });
+    mmenu.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
+    document.addEventListener("click", function (e) {
+      if (mmenu.classList.contains("open") && !mmenu.contains(e.target) && !burger.contains(e.target)) setMenu(false);
+    });
+  }
+
+  /* ---- top bar border on scroll ---- */
   var top = document.querySelector(".top");
   var onScroll = function () { top.classList.toggle("scrolled", window.scrollY > 12); };
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  /* spotlight follows the pointer */
+  /* ---- spotlight follows the pointer ---- */
   var spot = document.querySelector(".spot");
   if (spot && !reduce) {
     window.addEventListener("pointermove", function (e) {
@@ -18,11 +51,11 @@
     }, { passive: true });
   }
 
-  /* marquee: duplicate track so the -50% loop is seamless */
+  /* ---- marquee: duplicate track for a seamless loop ---- */
   var track = document.getElementById("marq");
   if (track) track.innerHTML += track.innerHTML;
 
-  /* typewriter rotation */
+  /* ---- typewriter rotation ---- */
   var words = ["regulatory systems.", "honest AI tools.", "clear technical prose.", "dashboards people trust.", "print-perfect documents."];
   var el = document.getElementById("typed");
   if (el && !reduce) {
@@ -38,18 +71,18 @@
     })();
   }
 
-  /* reveal on scroll */
+  /* ---- reveal on scroll ---- */
   var rvs = document.querySelectorAll(".rv");
   if ("IntersectionObserver" in window && !reduce) {
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
-    }, { threshold: 0.14 });
+    }, { threshold: 0.12 });
     rvs.forEach(function (n) { io.observe(n); });
   } else {
     rvs.forEach(function (n) { n.classList.add("in"); });
   }
 
-  /* count-up numbers when they enter the viewport */
+  /* ---- count-up numbers ---- */
   var counters = document.querySelectorAll("[data-count]");
   var runCount = function (n) {
     var target = parseInt(n.getAttribute("data-count"), 10) || 0;

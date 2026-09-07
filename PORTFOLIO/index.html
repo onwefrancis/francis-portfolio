@@ -5,8 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Onwe Francis Chiemerie — Regulatory-tech Builder · Petroleum Engineer · Technical Writer</title>
 <meta name="description" content="Onwe Francis Chiemerie builds honest, regulated-industry software — NCI RIMS (Regulatory Inventory Management System), Aptframe — and writes clear technical prose. Lagos, Nigeria.">
+<meta name="theme-color" content="#0a0f0d">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0f0d'/%3E%3Ctext x='32' y='43' font-family='monospace' font-size='30' font-weight='700' fill='%2334d399' text-anchor='middle'%3Ef.%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="/styles.css">
+<script>/* apply saved theme before paint */try{var t=localStorage.getItem("pf-theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
 </head>
 <body>
 <div class="spot" aria-hidden="true"></div>
@@ -21,9 +23,23 @@
       <a href="#writing">Writing</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a class="hire" href="#contact">Hire me</a>
+    <div class="acts">
+      <button class="iconbtn" id="themeBtn" title="Switch light / dark background" aria-label="Switch light or dark background">🌙</button>
+      <a class="hire desk" href="/assets/Onwe-Francis-Chiemerie-Resume.pdf" download>Get Resume</a>
+      <button class="iconbtn burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
   </div>
 </header>
+<div class="mmenu" id="mmenu">
+  <div class="mk">CATEGORIES</div>
+  <a href="#work"><span>01</span>Featured work</a>
+  <a href="#about"><span>02</span>About</a>
+  <a href="#experience"><span>03</span>Experience</a>
+  <a href="#writing"><span>04</span>Writing &amp; credentials</a>
+  <a href="#contact"><span>05</span>Work with me</a>
+  <a href="/resume">Résumé page</a>
+  <a class="hire" href="/assets/Onwe-Francis-Chiemerie-Resume.pdf" download>Get Resume (PDF)</a>
+</div>
 
 <main>
 <!-- ================= HERO ================= -->
@@ -41,6 +57,7 @@
     <div class="cta-row">
       <a class="btn primary" href="#work">View the work ↓</a>
       <a class="btn ghost" href="projects/rims">Read the RIMS case study</a>
+      <a class="btn ghost" href="/assets/Onwe-Francis-Chiemerie-Resume.pdf" download>Get Resume</a>
     </div>
     <div class="stats rv">
       <div><b data-count="50" data-suffix="+">0</b><span>products kept compliant</span></div>
@@ -66,13 +83,14 @@
   <div class="wrap">
     <div class="kick">01 · Featured work</div>
     <h2 class="sec">Two systems I own, end to end.</h2>
-    <p class="sec-sub">Designed, built and deployed by me — AI-assisted, every line owned. Case studies below tell the whole story: the problem, the decisions, the honesty guards.</p>
+    <p class="sec-sub">Designed, built and deployed by me — AI-assisted, every line owned. Watch the demos, open the
+      high-resolution shots, read the case studies.</p>
 
     <article class="proj rv">
       <div class="txt">
         <div class="num">PROJECT 01 · 2026 · IN PRODUCTION USE</div>
         <h3>NCI RIMS — Regulatory Inventory Management System</h3>
-        <div class="role">Sole designer &amp; builder · Next.js · Supabase · deployed on Vercel · private client system</div>
+        <div class="role">Sole designer &amp; builder · Next.js · Supabase · Vercel · private client system</div>
         <p>
           A GxP-aware compliance backbone for a Nigerian pharmaceutical manufacturer: expiry radar that fires
           renewals months early, controlled-document vault with approvals, letter studio with QR-verified
@@ -89,48 +107,14 @@
           <span style="color:var(--faint);font-weight:400">live system client-private · walkthrough on request</span>
         </div>
       </div>
-      <div class="viz">
-        <div class="mock" aria-label="Animated concept demo of RIMS">
-          <div class="bar"><i></i><i></i><i></i>&nbsp;rims · executive dashboard</div>
-          <div class="body">
-            <div class="side">
-              <div class="g">MAIN MENU</div>
-              <div class="it on">Executive dashboard</div>
-              <div class="it">Products catalogue</div>
-              <div class="it">Documents</div>
-              <div class="g">OPERATIONS &amp; REPORTS ⌄</div>
-              <div class="ops">
-                <div class="it">Expiry radar</div>
-                <div class="it">Port clearance</div>
-                <div class="it">Evidence packs</div>
-                <div class="it">Reports</div>
-              </div>
-            </div>
-            <div class="main">
-              <div class="kpis">
-                <div class="kpi"><b data-count="128">0</b><span>PRODUCTS</span></div>
-                <div class="kpi warn"><b data-count="9">0</b><span>RENEWALS DUE</span></div>
-                <div class="kpi ok"><b data-count="100" data-suffix="%">0</b><span>DOCS APPROVED</span></div>
-              </div>
-              <div class="gauge">
-                <svg viewBox="0 0 150 80">
-                  <defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="0">
-                    <stop offset="0" stop-color="#34d399"/><stop offset="1" stop-color="#a3e635"/>
-                  </linearGradient></defs>
-                  <path class="arc-bg" d="M10 74 A 65 65 0 0 1 140 74"/>
-                  <path class="arc" d="M10 74 A 65 65 0 0 1 140 74"/>
-                </svg>
-                <div class="lbl">renewal cover gauge · sweeps live</div>
-              </div>
-              <div class="rows">
-                <div class="r"><b>Paracetamol 500 mg</b><span class="st grn">clear · 412d</span></div>
-                <div class="r"><b>AmoxiCap 500</b><span class="st amb">packet · 61d</span></div>
-                <div class="r"><b>Ciprofloxacin 620</b><span class="st red">expired</span></div>
-              </div>
-            </div>
-          </div>
+      <div class="media">
+        <video autoplay muted loop playsinline preload="metadata" poster="/assets/rims-dash.png" src="/assets/rims-demo.webm" aria-label="RIMS demo reel"></video>
+        <div class="cap">demo reel · interface study with demo data — live data is client-confidential</div>
+        <div class="thumbs">
+          <a href="projects/rims"><img src="/assets/rims-dash.png" alt="RIMS executive dashboard, high resolution"><span>dashboard</span></a>
+          <a href="projects/rims"><img src="/assets/rims-radar.png" alt="RIMS expiry radar, high resolution"><span>expiry radar</span></a>
+          <a href="projects/rims"><img src="/assets/rims-print.png" alt="RIMS print design system: checklist and certificate"><span>print system</span></a>
         </div>
-        <div class="cap">animated concept demo — live data is client-confidential</div>
       </div>
     </article>
 
@@ -138,7 +122,7 @@
       <div class="txt">
         <div class="num">PROJECT 02 · 2025 · LIVE &amp; PUBLIC</div>
         <h3>Aptframe — AI prompt-builder workspace</h3>
-        <div class="role">Sole designer &amp; builder · Next.js · Supabase · Gemini API · hosted on Netlify</div>
+        <div class="role">Sole designer &amp; builder · Next.js · Supabase · Gemini API · Netlify</div>
         <p>
           I kept rewriting prompts and losing the good versions — so I built the fix. Aptframe converts a
           plain-English goal into a structured, reusable prompt through a guided seven-field brief, with the
@@ -154,22 +138,14 @@
           <a href="https://aptframe-beta.netlify.app/generator" target="_blank" rel="noopener">Launch Aptframe live ↗</a>
         </div>
       </div>
-      <div class="viz">
-        <div class="apt" aria-label="Animated concept demo of Aptframe">
-          <div class="bar">aptframe · prompt creation workspace</div>
-          <div class="in">
-            <div class="fld"><u>GOAL / TASK (REQUIRED)</u><div class="typed">Draft a 1-page NAFDAC renewal letter…</div></div>
-            <div class="fld"><u>AUDIENCE</u><div class="typed">Regulatory reviewers</div></div>
-            <div class="fld"><u>CONSTRAINTS</u><div class="typed">≤ 300 words · formal tone</div></div>
-          </div>
-          <div class="out">
-            <div>▸ ROLE: regulatory drafting assistant</div>
-            <div>▸ CONTEXT: renewal of registered product…</div>
-            <div>▸ FORMAT: letter, one page, formal</div>
-            <div>▸ CHECKS: names, reg numbers, dates</div>
-          </div>
+      <div class="media">
+        <video autoplay muted loop playsinline preload="metadata" poster="/assets/aptframe.png" src="/assets/aptframe-demo.webm" aria-label="Aptframe demo reel"></video>
+        <div class="cap">demo reel · recorded on the live product</div>
+        <div class="thumbs">
+          <a href="projects/aptframe"><img src="/assets/aptframe.png" alt="Aptframe generator workspace, high resolution"><span>workspace</span></a>
+          <a href="https://aptframe-beta.netlify.app/generator" target="_blank" rel="noopener"><img src="/assets/aptframe.png" alt="Aptframe live app"><span>live app ↗</span></a>
+          <a href="projects/aptframe"><img src="/assets/aptframe.png" alt="Aptframe structured output"><span>output</span></a>
         </div>
-        <div class="cap">animated concept demo</div>
       </div>
     </article>
   </div>
@@ -239,7 +215,7 @@
   </div>
 </section>
 
-<!-- ================= WRITING + CREDENTIALS (paper band) ================= -->
+<!-- ================= WRITING + CREDENTIALS ================= -->
 <section class="paper" id="writing">
   <div class="wrap">
     <div class="kick">04 · Writing &amp; credentials</div>
@@ -273,7 +249,7 @@
       <div class="cred rv">🤖 <b>Google AI Essentials</b> — Google via Coursera: prompt design, evaluating AI outputs,
         responsible AI use.</div>
       <div class="cred rv">🦺 <b>HSE Levels 1–3 (OSHA)</b> — Feb 2023 · <b>Level 1 Oil Field Rigging</b> — Mar 2024.</div>
-      <div class="cred rv"> <b>SPE Member</b> (FUTO Chapter) · <b>NUESA Chapters Executive President</b> 2023–2025.</div>
+      <div class="cred rv">⛽ <b>SPE Member</b> (FUTO Chapter) · <b>NUESA Chapters Executive President</b> 2023–2025.</div>
     </div>
     <div class="chips rv">
       <span>Technical writing</span><span>Document review &amp; QA</span><span>Regulatory affairs · NAFDAC/NUPRC/PIA</span>
@@ -294,13 +270,14 @@
     <div class="frow">
       <a class="btn primary" href="mailto:onwefrancis123@gmail.com">✉ onwefrancis123@gmail.com</a>
       <a class="btn ghost" href="https://www.linkedin.com/in/onwe-francis-chiemerie-189285237/" target="_blank" rel="noopener">in · LinkedIn</a>
-      <a class="btn ghost" href="https://aptframe-beta.netlify.app/generator" target="_blank" rel="noopener">🚀 Aptframe live</a>
+      <a class="btn ghost" href="/assets/Onwe-Francis-Chiemerie-Resume.pdf" download> Get Resume</a>
     </div>
     <div class="fmeta">
       <span>© 2026 Onwe Francis Chiemerie</span>
       <span>+234 812 882 8214</span>
       <a href="projects/rims">RIMS case study</a>
       <a href="projects/aptframe">Aptframe case study</a>
+      <a href="/resume">Résumé</a>
       <span>hand-built · no templates</span>
     </div>
   </div>

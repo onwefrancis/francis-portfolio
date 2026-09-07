@@ -7,6 +7,7 @@
 <meta name="description" content="Aptframe converts a plain-English goal into a structured, reusable prompt through a guided seven-field brief. Next.js, Supabase, Gemini API behind protected serverless functions.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0f0d'/%3E%3Ctext x='32' y='43' font-family='monospace' font-size='30' font-weight='700' fill='%2334d399' text-anchor='middle'%3Ef.%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="/styles.css">
+<script>try{var t=localStorage.getItem("pf-theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
 </head>
 <body>
 <div class="spot" aria-hidden="true"></div>
@@ -20,9 +21,23 @@
       <a href="/#writing">Writing</a>
       <a href="/#contact">Contact</a>
     </nav>
-    <a class="hire" href="/#contact">Hire me</a>
+    <div class="acts">
+      <button class="iconbtn" id="themeBtn" title="Switch light / dark background" aria-label="Switch light or dark background">🌙</button>
+      <a class="hire desk" href="/assets/Onwe-Francis-Chiemerie-Resume.pdf" download>Get Resume</a>
+      <button class="iconbtn burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
   </div>
 </header>
+<div class="mmenu" id="mmenu">
+  <div class="mk">CATEGORIES</div>
+  <a href="/#work"><span>01</span>Featured work</a>
+  <a href="/#about"><span>02</span>About</a>
+  <a href="/#experience"><span>03</span>Experience</a>
+  <a href="/#writing"><span>04</span>Writing &amp; credentials</a>
+  <a href="/#contact"><span>05</span>Work with me</a>
+  <a href="/resume">Résumé page</a>
+  <a class="hire" href="/assets/Onwe-Francis-Chiemerie-Resume.pdf" download>Get Resume (PDF)</a>
+</div>
 
 <main class="cs">
   <div class="wrap cs-head">
@@ -40,24 +55,16 @@
     </div>
   </div>
 
-  <div class="vizband">
-    <div class="wrap">
-      <div class="apt" aria-label="Animated concept demo of Aptframe">
-        <div class="bar">aptframe · prompt creation workspace</div>
-        <div class="in">
-          <div class="fld"><u>GOAL / TASK (REQUIRED)</u><div class="typed">Draft a 1-page NAFDAC renewal letter…</div></div>
-          <div class="fld"><u>AUDIENCE</u><div class="typed">Regulatory reviewers</div></div>
-          <div class="fld"><u>CONSTRAINTS</u><div class="typed">≤ 300 words · formal tone</div></div>
-        </div>
-        <div class="out">
-          <div>▸ ROLE: regulatory drafting assistant</div>
-          <div>▸ CONTEXT: renewal of registered product…</div>
-          <div>▸ FORMAT: letter, one page, formal</div>
-          <div>▸ CHECKS: names, reg numbers, dates</div>
-        </div>
-      </div>
+  <div class="wrap">
+    <div class="videoband rv">
+      <video autoplay muted loop playsinline preload="metadata" poster="/assets/aptframe.png" src="/assets/aptframe-demo.webm" aria-label="Aptframe demo reel recorded on the live product"></video>
+      <div class="vc">DEMO REEL · recorded live on aptframe-beta.netlify.app — brief in, structured prompt out</div>
     </div>
-    <div class="cap" style="position:static;text-align:center;margin-top:14px">animated concept demo</div>
+    <div class="gal rv">
+      <figure><img src="/assets/aptframe.png" alt="Aptframe generator workspace in high resolution"><figcaption>The generator workspace — seven-field guided brief</figcaption></figure>
+      <figure><img src="/assets/aptframe-home.png" alt="Aptframe landing page in high resolution"><figcaption>Landing — the promise in one screen</figcaption></figure>
+      <figure><img src="/assets/aptframe-out.png" alt="Aptframe structured output in high resolution"><figcaption>Structured output — role, context, format, checks</figcaption></figure>
+    </div>
   </div>
 
   <div class="wrap">
@@ -84,6 +91,7 @@
 
     <div class="cta-row" style="margin:44px 0 90px">
       <a class="btn primary" href="https://aptframe-beta.netlify.app/generator" target="_blank" rel="noopener">🚀 Launch Aptframe live</a>
+      <a class="btn ghost" href="/assets/Onwe-Francis-Chiemerie-Resume.pdf" download>Get Resume</a>
       <a class="btn ghost" href="/projects/rims">← Previous case study: RIMS</a>
     </div>
   </div>
