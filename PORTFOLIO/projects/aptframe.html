@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case study — Aptframe, AI prompt-builder workspace · Onwe Francis Chiemerie</title>
+<meta name="description" content="Aptframe converts a plain-English goal into a structured, reusable prompt through a guided seven-field brief. Next.js, Supabase, Gemini API behind protected serverless functions.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0f0d'/%3E%3Ctext x='32' y='43' font-family='monospace' font-size='30' font-weight='700' fill='%2334d399' text-anchor='middle'%3Ef.%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="spot" aria-hidden="true"></div>
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="/">onwefrancis<i>.build</i></a>
+    <nav>
+      <a href="/#work">Work</a>
+      <a href="/#about">About</a>
+      <a href="/#experience">Experience</a>
+      <a href="/#writing">Writing</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <a class="hire" href="/#contact">Hire me</a>
+  </div>
+</header>
+
+<main class="cs">
+  <div class="wrap cs-head">
+    <a class="back" href="/#work">← all work</a>
+    <div class="kick" style="margin-top:22px">Case study · AI tooling · 2025</div>
+    <h1>Aptframe — the prompt-builder<br>workspace</h1>
+    <p class="sub">I kept rewriting prompts and losing the good versions — so I built the fix. Aptframe converts a
+      plain-English goal into a structured, reusable prompt through a guided seven-field brief, and keeps every
+      version you save.</p>
+    <div class="cs-meta">
+      <div><span>Role</span><b>Sole designer &amp; builder</b></div>
+      <div><span>Stack</span><b>Next.js · TypeScript · Supabase</b></div>
+      <div><span>Model layer</span><b>Gemini API · serverless</b></div>
+      <div><span>Status</span><b>Live &amp; public</b></div>
+    </div>
+  </div>
+
+  <div class="vizband">
+    <div class="wrap">
+      <div class="apt" aria-label="Animated concept demo of Aptframe">
+        <div class="bar">aptframe · prompt creation workspace</div>
+        <div class="in">
+          <div class="fld"><u>GOAL / TASK (REQUIRED)</u><div class="typed">Draft a 1-page NAFDAC renewal letter…</div></div>
+          <div class="fld"><u>AUDIENCE</u><div class="typed">Regulatory reviewers</div></div>
+          <div class="fld"><u>CONSTRAINTS</u><div class="typed">≤ 300 words · formal tone</div></div>
+        </div>
+        <div class="out">
+          <div>▸ ROLE: regulatory drafting assistant</div>
+          <div>▸ CONTEXT: renewal of registered product…</div>
+          <div>▸ FORMAT: letter, one page, formal</div>
+          <div>▸ CHECKS: names, reg numbers, dates</div>
+        </div>
+      </div>
+    </div>
+    <div class="cap" style="position:static;text-align:center;margin-top:14px">animated concept demo</div>
+  </div>
+
+  <div class="wrap">
+    <h3>The problem</h3>
+    <p>Good prompts are engineering artifacts — and I was treating them like sticky notes. Scattered across chats,
+      subtly different each time, impossible to reuse or review. The craft of prompt design deserved the same
+      discipline as any other specification: <b>fields, constraints, versioning, reuse</b>.</p>
+
+    <h3>The build</h3>
+    <ul>
+      <li><b>Guided seven-field brief</b> — goal, audience, context, constraints, format, examples, checks — that
+        assembles a structured prompt no missing section can sabotage.</li>
+      <li><b>Model behind the wall:</b> the Gemini API is called only from protected serverless functions; no keys
+        in the browser, ever.</li>
+      <li><b>Supabase persistence</b> for saved prompts and versions, so the good ones stop disappearing.</li>
+      <li><b>Deployed on Netlify</b> with framework-aware builds; my first end-to-end production system.</li>
+    </ul>
+
+    <h3>Why it matters to my practice</h3>
+    <p>Aptframe is where my prompt-design research lives, and where the honesty rules I now apply everywhere were
+      first written down: an AI output is a draft to evaluate, not a fact to trust. That lesson went straight into
+      how the AI assistant inside <a href="/projects/rims" style="color:var(--em)">NCI RIMS</a> behaves —
+      guidance-only answers, sourced or silent.</p>
+
+    <div class="cta-row" style="margin:44px 0 90px">
+      <a class="btn primary" href="https://aptframe-beta.netlify.app/generator" target="_blank" rel="noopener">🚀 Launch Aptframe live</a>
+      <a class="btn ghost" href="/projects/rims">← Previous case study: RIMS</a>
+    </div>
+  </div>
+</main>
+
+<footer class="foot" style="padding-top:50px">
+  <div class="wrap">
+    <div class="fmeta">
+      <span>© 2026 Onwe Francis Chiemerie</span>
+      <a href="mailto:onwefrancis123@gmail.com">onwefrancis123@gmail.com</a>
+      <a href="https://www.linkedin.com/in/onwe-francis-chiemerie-189285237/" target="_blank" rel="noopener">LinkedIn</a>
+      <span>+234 812 882 8214</span>
+    </div>
+  </div>
+</footer>
+<script src="/main.js"></script>
+</body>
+</html>

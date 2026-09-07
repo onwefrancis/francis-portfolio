@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case study — NCI RIMS, Regulatory Inventory Management System · Onwe Francis Chiemerie</title>
+<meta name="description" content="How I designed and built NCI RIMS: a GxP-aware, 21 CFR Part 11-supportable regulatory inventory system for a Nigerian pharmaceutical manufacturer — expiry radar, document vault, letter studio, print design system, RBAC and audit trail.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0f0d'/%3E%3Ctext x='32' y='43' font-family='monospace' font-size='30' font-weight='700' fill='%2334d399' text-anchor='middle'%3Ef.%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="spot" aria-hidden="true"></div>
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="/">onwefrancis<i>.build</i></a>
+    <nav>
+      <a href="/#work">Work</a>
+      <a href="/#about">About</a>
+      <a href="/#experience">Experience</a>
+      <a href="/#writing">Writing</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <a class="hire" href="/#contact">Hire me</a>
+  </div>
+</header>
+
+<main class="cs">
+  <div class="wrap cs-head">
+    <a class="back" href="/#work">← all work</a>
+    <div class="kick" style="margin-top:22px">Case study · regulatory-tech · 2026</div>
+    <h1>NCI RIMS — the Regulatory Inventory<br>Management System</h1>
+    <p class="sub">A compliance backbone for a NAFDAC-regulated pharmaceutical manufacturer: one source of truth for
+      products, registrations, documents, letters, port clearances and deadlines — designed print-first, secured
+      role-by-role, and honest about what it is and isn't yet.</p>
+    <div class="cs-meta">
+      <div><span>Role</span><b>Sole designer &amp; builder</b></div>
+      <div><span>Stack</span><b>Next.js · TypeScript · Supabase</b></div>
+      <div><span>Deployed</span><b>Vercel · PWA · mobile-first MD</b></div>
+      <div><span>Status</span><b>In production use · private</b></div>
+    </div>
+  </div>
+
+  <div class="vizband">
+    <div class="wrap">
+      <div class="mock" aria-label="Animated concept demo of RIMS">
+        <div class="bar"><i></i><i></i><i></i>&nbsp;rims · executive dashboard</div>
+        <div class="body">
+          <div class="side">
+            <div class="g">MAIN MENU</div>
+            <div class="it on">Executive dashboard</div>
+            <div class="it">Products catalogue</div>
+            <div class="it">Documents</div>
+            <div class="g">OPERATIONS &amp; REPORTS ⌄</div>
+            <div class="ops">
+              <div class="it">Expiry radar</div>
+              <div class="it">Port clearance</div>
+              <div class="it">Evidence packs</div>
+              <div class="it">Reports</div>
+            </div>
+          </div>
+          <div class="main">
+            <div class="kpis">
+              <div class="kpi"><b data-count="128">0</b><span>PRODUCTS</span></div>
+              <div class="kpi warn"><b data-count="9">0</b><span>RENEWALS DUE</span></div>
+              <div class="kpi ok"><b data-count="100" data-suffix="%">0</b><span>DOCS APPROVED</span></div>
+            </div>
+            <div class="gauge">
+              <svg viewBox="0 0 150 80">
+                <defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#34d399"/><stop offset="1" stop-color="#a3e635"/>
+                </linearGradient></defs>
+                <path class="arc-bg" d="M10 74 A 65 65 0 0 1 140 74"/>
+                <path class="arc" d="M10 74 A 65 65 0 0 1 140 74"/>
+              </svg>
+              <div class="lbl">renewal cover gauge · sweeps live</div>
+            </div>
+            <div class="rows">
+              <div class="r"><b>Paracetamol 500 mg</b><span class="st grn">clear · 412d</span></div>
+              <div class="r"><b>AmoxiCap 500</b><span class="st amb">packet · 61d</span></div>
+              <div class="r"><b>Ciprofloxacin 620</b><span class="st red">expired</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cap" style="position:static;text-align:center;margin-top:14px">animated concept demo — the live system is client-confidential; walkthrough available on request</div>
+  </div>
+
+  <div class="wrap">
+    <h3>The problem</h3>
+    <p>Fifty-plus regulated products, each with a registration that expires, a dossier that must stay current,
+      artwork that must match approvals, and permits with hard statutory dates. All of it lived in spreadsheets,
+      folders and institutional memory. A missed renewal date is not an inconvenience in this industry —
+      it is a <b>product off the market</b>. Meanwhile the managing director reads everything on a phone,
+      and regulators expect documents that look like they came from a disciplined quality system.</p>
+
+    <h3>What I built</h3>
+    <p>Fourteen modules behind one role-aware sidebar, each earned its place by killing a real failure mode:</p>
+    <div class="mods">
+      <div><b>Executive dashboard</b> KPIs, renewal pressure, port exposure — and a one-tap executive report in the house print design.</div>
+      <div><b>Expiry radar</b> Every registration scored by days-left bands; print dossier per product, A4-exact.</div>
+      <div><b>Product portfolio &amp; catalogue</b> Data-derived artwork panels and photo cards — never guessed labels.</div>
+      <div><b>Document vault</b> Versions, approval states, ownership; 600+ controlled records migrated in.</div>
+      <div><b>Letter studio</b> Template-driven official letters with stored signatures and QR verification links.</div>
+      <div><b>NAFDAC checklists</b> Requirement lists rebuilt from official guidelines; one-page A4 print sheets with Reviewed-by signature blocks.</div>
+      <div><b>Port clearance board</b> Consignment timelines with free-day and demurrage countdowns.</div>
+      <div><b>Evidence packs</b> Audit-ready bundles assembled per product in one click.</div>
+      <div><b>Monday briefing</b> The week's regulatory picture, auto-written from live data.</div>
+      <div><b>Regulatory Academy</b> Internal training notes, admin-authored.</div>
+      <div><b>AI assistant</b> RAG over the company's own documents — answers labelled guidance-only, never invents product facts.</div>
+      <div><b>RBAC + audit trail</b> Role matrix per page and action; append-only audit events on every write.</div>
+      <div><b>Scan &amp; fill / offline PWA</b> Field capture on poor networks; installs to the MD's phone home screen.</div>
+      <div><b>Print design system</b> One A4 grammar for checklists, dossiers, certificates and reports — signature blocks included.</div>
+    </div>
+
+    <h3>Engineering decisions I'd defend in a review</h3>
+    <ul>
+      <li><b>Security at the database, not the page.</b> Postgres row-level security plus a role matrix; privileged
+        writes only through service-role server actions behind capability checks.</li>
+      <li><b>Print as a first-class output.</b> Screen/print twin stylesheets so what the MD sees is exactly what
+        the printer produces — one A4 page for checklists, landscape certificates, 4-page executive reports.</li>
+      <li><b>Verification over vibes.</b> Playwright end-to-end probes against the deployed production build after
+        every release; database state re-checked through the API, not just screenshots.</li>
+      <li><b>Data honesty rules.</b> No document is ever labelled to a product by assumption; empty beats wrong;
+        every generated figure carries its source and generation date.</li>
+      <li><b>Migration without drama.</b> 600+ legacy records reconciled and imported with duplicate handling and
+        rollback-safe batches.</li>
+    </ul>
+
+    <div class="note"><b>Honesty guard-rail, by design:</b> RIMS is described as <b>GxP-aware and 21 CFR Part 11
+      supportable</b> — e-signature fields, audit trail and access control are in place, but the word
+      "validated" will not appear anywhere until penetration testing (GOL-01) and staff training (GOL-03)
+      are complete. AI features answer as guidance only. A regulated system that overclaims is a liability
+      wearing a lab coat.</div>
+
+    <h3>Outcomes so far</h3>
+    <ul>
+      <li>Renewals now surface <b>90+ days before expiry</b> with the packet list already assembled.</li>
+      <li><b>621 controlled documents</b> under version and approval control, searchable in one vault.</li>
+      <li>Official correspondence drafted, signed and QR-verified from one studio — minutes instead of days.</li>
+      <li>The MD runs the business from a phone: mobile-collapsed navigation, offline installs, one-tap reports.</li>
+    </ul>
+
+    <h3>What I learned</h3>
+    <p>Regulated industries don't need more software; they need <b>evidence machines</b>. Every feature that
+      survived contact with the business was one that produced a defensible artifact — a sheet, a pack, a trail.
+      The rest was decoration, and I deleted it.</p>
+
+    <div class="cta-row" style="margin:44px 0 90px">
+      <a class="btn primary" href="/#contact">Request a walkthrough</a>
+      <a class="btn ghost" href="/projects/aptframe">Next case study: Aptframe →</a>
+    </div>
+  </div>
+</main>
+
+<footer class="foot" style="padding-top:50px">
+  <div class="wrap">
+    <div class="fmeta">
+      <span>© 2026 Onwe Francis Chiemerie</span>
+      <a href="mailto:onwefrancis123@gmail.com">onwefrancis123@gmail.com</a>
+      <a href="https://www.linkedin.com/in/onwe-francis-chiemerie-189285237/" target="_blank" rel="noopener">LinkedIn</a>
+      <span>+234 812 882 8214</span>
+    </div>
+  </div>
+</footer>
+<script src="/main.js"></script>
+</body>
+</html>
