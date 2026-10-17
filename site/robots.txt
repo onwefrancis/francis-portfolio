@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://onwefrancis.pages.dev/sitemap.xml
