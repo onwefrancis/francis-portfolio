@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth dark">
+<head>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onwe Francis Chiemerie — ONWE · works that own their claims</title>
+  <meta name="description" content="The portfolio of Engr. Onwe Francis Chiemerie — Principal of the ONWE house, Lagos. Petroleum Engineer (FUTO 2.1), Regulatory-Tech Builder keeping 50+ NAFDAC products compliant, and AI Systems Architect.">
+  <meta name="theme-color" content="#04100b">
+  <link rel="canonical" href="https://onwefrancis.pages.dev/">
+  <meta property="og:title" content="Onwe Francis Chiemerie — works that own their claims">
+  <meta property="og:description" content="Principal of ONWE, Lagos. Systems, documents, media and AI — every work shipped with one owner's name under it.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://onwefrancis.pages.dev/">
+  <meta property="og:image" content="https://onwefrancis.pages.dev/assets/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://onwefrancis.pages.dev/assets/og-card.png">
+  <meta name="twitter:title" content="Onwe Francis Chiemerie — works that own their claims">
+  <meta name="twitter:description" content="Petroleum engineer turned regulatory-tech builder, AI architect, and technical writer. Lagos.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person",
+   "name":"Engr. Onwe Francis Chiemerie","url":"https://onwefrancis.pages.dev/",
+   "jobTitle":"Regulatory Officer & Systems Architect",
+   "worksFor":{"@type":"Organization","name":"NCI Pharm Chem. Ind."},
+   "sameAs":["https://github.com/onwefrancis",
+             "https://www.linkedin.com/in/onwe-francis-chiemerie-189285237/",
+             "https://concise-specialist-1a4.notion.site/Francis-Onwe-Technical-Writer-Petroleum-Engineer-3c100baf54788172a9a1fc9423f44cef"]}
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: {
+        deep: '#04100b', deep2: '#071a13', panel: '#0a1f16',
+        canopy: '#0b3527', blade: '#e8b84b', gold: '#d9a441',
+        trace: '#bfe3cf', silk: '#fbfaf6'
+      } } }
+    };
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #04100b; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .bg-grid-blueprint {
+      background-size: 36px 36px;
+      background-image:
+        linear-gradient(to right, rgba(191, 227, 207, 0.028) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(191, 227, 207, 0.028) 1px, transparent 1px);
+    }
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+    .spotlight-card {
+      position: relative;
+      background: rgba(9, 26, 19, 0.84);
+      border: 1px solid rgba(191, 227, 207, 0.09);
+      backdrop-filter: blur(24px);
+      overflow: hidden;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .spotlight-card:hover {
+      border-color: rgba(232, 184, 75, 0.45);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 35px rgba(217, 164, 65, 0.13);
+      transform: translateY(-3px);
+    }
+    .metrics-row { display: flex; flex-wrap: wrap; gap: 1rem 1.75rem; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.1rem; margin-top: 1.4rem; }
+    .metrics-row span { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #bfe3cf; display: inline-flex; align-items: center; gap: 0.45rem; }
+    .metrics-row span::before { content: "▸"; color: #e8b84b; font-size: 10px; }
+    #progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      background: linear-gradient(to right, #e8b84b, #d9a441, #bfe3cf);
+      z-index: 100;
+      width: 0%;
+      transition: width 0.1s ease;
+    }
+    #lightbox-modal {
+      display: none; position: fixed; inset: 0; z-index: 999;
+      background: rgba(0, 0, 0, 0.94); backdrop-filter: blur(16px);
+      align-items: center; justify-content: center;
+    }
+    #lightbox-modal.active { display: flex; }
+    .spin-slow { transform-origin: 50% 50%; animation: spinz 60s linear infinite; }
+    .spin-slower { transform-origin: 50% 50%; animation: spinz 90s linear infinite reverse; }
+    @keyframes spinz { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal-on-scroll { transition: none; opacity: 1; transform: none; }
+      .spin-slow, .spin-slower { animation: none; }
+      #particle-canvas { display: none; }
+    }
+  </style>
+</head>
+<body class="bg-deep text-slate-100 min-h-full flex flex-col antialiased bg-grid-blueprint selection:bg-blade selection:text-black relative overflow-x-clip">
+  <div id="progress-bar"></div>
+  <canvas id="particle-canvas" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
+
+  <div id="lightbox-modal" onclick="closeLightbox()" role="dialog" aria-modal="true" aria-label="Screenshot preview">
+    <div class="relative max-w-5xl max-h-[90vh] p-4 flex flex-col items-center">
+      <img id="lightbox-img" src="" alt="Screenshot" class="max-w-full max-h-[82vh] rounded-2xl border border-white/20 shadow-2xl object-contain">
+      <div id="lightbox-caption" class="mt-4 text-xs font-mono text-slate-300 text-center"></div>
+      <button onclick="closeLightbox()" aria-label="Close preview" class="absolute -top-3 -right-3 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white font-mono flex items-center justify-center text-sm">✕</button>
+    </div>
+  </div>
+
+  <!-- utility strip: availability, lagos clock, socials, résumé -->
+  <div class="border-b border-white/[0.06] bg-deep2/90 backdrop-blur-md px-6 py-2.5 flex items-center justify-between text-[11px] font-mono text-slate-400 relative z-20">
+    <div class="flex items-center gap-3">
+      <span class="inline-block w-2 h-2 rounded-full bg-trace animate-pulse"></span>
+      <span class="text-slate-200 font-semibold">Available for select technical engagements</span>
+      <span class="text-slate-600 hidden sm:inline">|</span>
+      <span class="text-slate-400 hidden sm:inline">Lagos, NG (<span id="lagos-clock">UTC+1 14:00:00</span>)</span>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="https://www.linkedin.com/in/onwe-francis-chiemerie-189285237/" target="_blank" rel="noopener" class="hover:text-blade transition text-slate-400 hidden sm:inline">LinkedIn ↗</a>
+      <a href="https://github.com/onwefrancis" target="_blank" rel="noopener" class="hover:text-blade transition text-slate-400 hidden sm:inline">GitHub ↗</a>
+      <a href="resume.html" class="text-blade hover:text-gold transition font-bold flex items-center gap-1.5">
+        <span>View Résumé</span><span>↓</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- masthead: the house named -->
+  <header class="sticky top-0 z-40 border-b border-white/[0.08] bg-deep/90 backdrop-blur-xl px-6 py-4 max-w-5xl mx-auto w-full flex items-center justify-between">
+    <a href="/" class="flex items-center gap-3 group">
+      <span class="w-10 h-10 rounded-xl bg-deep border border-white/15 flex items-center justify-center shadow-inner overflow-hidden">
+        <svg viewBox="0 0 100 100" class="w-7 h-7" aria-label="ONWE — Ringswipe">
+          <g class="spin-slow"><circle cx="50" cy="50" r="35" fill="none" stroke="#bfe3cf" stroke-width="6" stroke-dasharray="13 8"/></g>
+          <g class="spin-slower"><circle cx="50" cy="50" r="23" fill="none" stroke="#d9a441" stroke-width="6" stroke-dasharray="9 7"/></g>
+          <rect x="6" y="44.5" width="70" height="8" fill="#e8b84b" transform="rotate(-28 50 50)"/>
+        </svg>
+      </span>
+      <span class="leading-none">
+        <span class="block text-base font-extrabold tracking-[0.22em] text-white">ONWE</span>
+        <span class="block text-[9px] font-mono text-slate-400 uppercase tracking-widest mt-1">works that own their claims</span>
+      </span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-7 text-xs font-semibold text-slate-300 font-mono">
+      <a href="#work" class="hover:text-blade transition">01. Systems</a>
+      <a href="#about" class="hover:text-blade transition">02. The Man</a>
+      <a href="#experience" class="hover:text-blade transition">03. Career</a>
+      <a href="#writing" class="hover:text-blade transition">04. Writing</a>
+      <a href="#contact" class="hover:text-blade transition">05. Contact</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a href="resume.html" class="px-4 py-2 rounded-xl text-xs font-bold bg-blade hover:bg-gold text-black font-mono transition shadow-lg shadow-gold/20 flex items-center gap-1.5">
+        <span>Get Résumé</span><span>↓</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- mobile room rail -->
+  <div class="md:hidden sticky top-[72px] z-30 bg-deep/90 backdrop-blur-xl border-b border-white/[0.06] px-5 py-2 flex gap-5 overflow-x-auto text-[10px] font-mono text-slate-400 whitespace-nowrap">
+    <span class="text-blade font-bold">REGULATORY</span><span>·</span><span>EDITORIAL</span><span>·</span><span>MOTION</span><span>·</span><span>AI</span>
+    <span class="text-slate-600">— the four rooms of the house</span>
+  </div>
+
+  <main class="relative z-10 flex-1 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-20 pb-24">
+
+    <!-- HERO -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center reveal-on-scroll">
+      <div class="lg:col-span-8 space-y-6">
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-blade/10 border border-blade/25 text-blade text-xs font-mono">
+          <span class="w-2 h-2 rounded-full bg-trace animate-pulse"></span>
+          <span>ENGR. O. F. CHIEMERIE — PRINCIPAL, ONWE HOUSE</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-[3.4rem] font-extrabold text-white tracking-tight leading-[1.08]">
+          Petroleum engineer turned <span class="text-blade">regulatory-tech builder</span>, AI architect, and technical writer.
+        </h1>
+
+        <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-light">
+          I keep <strong class="text-white font-semibold">50+ NAFDAC-regulated products compliant</strong> at NCI Pharm Chem. When standard industry software lacks rigorous audit proof, I design, code, and deploy production systems: immutable audit trails, print-perfect regulatory document studios, and AI that only outputs verifiable claims.
+        </p>
+
+        <p class="text-xs font-mono text-slate-400 tracking-wide">
+          "Every system must be traceable, evidence-based, and honest about what it can prove."
+        </p>
+
+        <div class="pt-2 flex flex-wrap items-center gap-4 text-xs font-mono">
+          <a href="#work" class="px-7 py-3.5 rounded-xl font-bold bg-blade hover:bg-gold text-black transition shadow-xl shadow-gold/25 flex items-center gap-2">
+            <span>Explore Shipped Systems</span><span>↓</span>
+          </a>
+          <a href="resume.html" class="px-6 py-3.5 rounded-xl font-bold bg-white/5 hover:bg-white/10 border border-white/10 text-slate-200 transition flex items-center gap-2">
+            <span>View Interactive Résumé</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-4 flex justify-center">
+        <div class="relative group">
+          <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-blade/30 to-trace/30 blur-xl opacity-60 group-hover:opacity-100 transition duration-700"></div>
+          <div class="relative rounded-3xl bg-panel border border-white/15 p-2 overflow-hidden shadow-2xl">
+            <img src="assets/francis-corporate-hd.jpg" alt="Onwe Francis Chiemerie — Corporate Executive Portrait" class="w-64 h-84 sm:w-72 sm:h-96 object-cover object-top rounded-2xl filter contrast-105 transition duration-500 group-hover:scale-102">
+            <div class="p-3 bg-black/60 rounded-xl mt-2 border border-white/5 text-center font-mono">
+              <div class="text-xs font-bold text-white">Onwe Francis Chiemerie</div>
+              <div class="text-[10px] text-blade font-semibold mt-0.5">Regulatory Officer & Systems Architect</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ambient house rings behind the portrait -->
+      <svg class="absolute -right-24 -top-24 w-[520px] h-[520px] opacity-[0.05] pointer-events-none hidden lg:block spin-slower" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="44" fill="none" stroke="#bfe3cf" stroke-width="2" stroke-dasharray="6 4"/>
+        <circle cx="50" cy="50" r="30" fill="none" stroke="#d9a441" stroke-width="2" stroke-dasharray="4 3"/>
+      </svg>
+    </div>
+
+    <!-- THE FOUR ROOMS -->
+    <div class="mt-20 reveal-on-scroll">
+      <div class="grid grid-cols-2 lg:grid-cols-4 border border-white/10 rounded-2xl overflow-hidden divide-x divide-y lg:divide-y-0 divide-white/[0.07] bg-panel/60 backdrop-blur-xl">
+        <div class="p-5 border-l-2 border-l-blade">
+          <div class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Room 01</div>
+          <div class="text-sm font-extrabold text-blade tracking-wide mt-1">REGULATORY</div>
+          <p class="text-[11px] text-slate-400 font-light mt-1.5 leading-relaxed">Compliance systems, dossiers, letters. Leads in public — the first room.</p>
+        </div>
+        <div class="p-5">
+          <div class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Room 02</div>
+          <div class="text-sm font-extrabold text-white tracking-wide mt-1">EDITORIAL</div>
+          <p class="text-[11px] text-slate-400 font-light mt-1.5 leading-relaxed">Documents, guides and engines that carry their sources.</p>
+        </div>
+        <div class="p-5">
+          <div class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Room 03</div>
+          <div class="text-sm font-extrabold text-white tracking-wide mt-1">MOTION</div>
+          <p class="text-[11px] text-slate-400 font-light mt-1.5 leading-relaxed">Scripts and narratives engineered for retention.</p>
+        </div>
+        <div class="p-5">
+          <div class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Room 04</div>
+          <div class="text-sm font-extrabold text-white tracking-wide mt-1">AI</div>
+          <p class="text-[11px] text-slate-400 font-light mt-1.5 leading-relaxed">Diagnostics that output only verifiable claims.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="mt-20 grid grid-cols-2 sm:grid-cols-4 gap-4 border border-white/10 bg-panel/80 backdrop-blur-xl rounded-2xl p-6 font-mono text-center sm:text-left reveal-on-scroll">
+      <div class="sm:border-r border-white/10 sm:pr-4">
+        <div class="text-3xl sm:text-4xl font-extrabold text-blade count-number" data-target="50">0</div>
+        <div class="text-[10px] text-slate-400 uppercase mt-1">NAFDAC Products Compliant</div>
+      </div>
+      <div class="sm:border-r border-white/10 sm:px-4">
+        <div class="text-3xl sm:text-4xl font-extrabold text-trace count-number" data-target="3">0</div>
+        <div class="text-[10px] text-slate-400 uppercase mt-1">Production Systems Shipped</div>
+      </div>
+      <div class="sm:border-r border-white/10 sm:px-4">
+        <div class="text-3xl sm:text-4xl font-extrabold text-blade count-number" data-target="3">0</div>
+        <div class="text-[10px] text-slate-400 uppercase mt-1">Years Technical Writing</div>
+      </div>
+      <div class="sm:pl-4">
+        <div class="text-3xl sm:text-4xl font-extrabold text-trace">3.55</div>
+        <div class="text-[10px] text-slate-400 uppercase mt-1">B.Eng. Petroleum (2.1, FUTO)</div>
+      </div>
+    </div>
+
+    <!-- WORK -->
+    <div id="work" class="mt-32 space-y-16">
+      <div class="border-b border-white/10 pb-4 flex items-end justify-between reveal-on-scroll">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-blade font-mono">01 · Featured Software &amp; Client Work</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mt-1">Systems I Own, Work They Returned For.</h2>
+        </div>
+        <span class="text-xs font-mono text-slate-400 hidden sm:inline">Designed, Built &amp; Deployed</span>
+      </div>
+
+      <!-- PROJECT 01 · room: REGULATORY -->
+      <article class="spotlight-card rounded-3xl p-8 sm:p-12 border border-white/10 border-l-4 border-l-blade reveal-on-scroll">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4 text-xs font-mono">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="px-2.5 py-1 rounded bg-blade/10 text-blade font-bold text-[10px] uppercase border border-blade/20">PROJECT 01 · ROOM: REGULATORY</span>
+            <span class="text-slate-400">• NCI Pharm Chem — the first room, leads in public</span>
+          </div>
+          <span class="text-trace font-bold">● IN PRODUCTION USE</span>
+        </div>
+
+        <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">NCI RIMS — Regulatory Inventory Management System</h3>
+
+        <p class="mt-4 text-sm sm:text-base text-slate-300 leading-relaxed font-light">
+          A compliance operating system for Nigerian pharmaceutical manufacturing. Expiry radars trigger renewals 3+ months early, controlled-document vault with role-based sign-offs, letter studio with QR-verified signatures, print-perfect NAFDAC checklists, port-clearance demurrage countdowns, and an append-only audit trail. Built to be <strong>21 CFR Part 11 supportable</strong>.
+        </p>
+
+        <div class="metrics-row">
+          <span>50+ products under tracking</span>
+          <span>Renewals flagged 90+ days early</span>
+          <span>Append-only audit trail</span>
+          <span>Live public landing + demo tenant</span>
+        </div>
+
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <figure onclick="openLightbox('assets/rims-landing.jpg', 'NCI RIMS public landing — Inspection-ready, twelve months of the year (live at nci-rims.vercel.app)')" class="group cursor-pointer rounded-2xl overflow-hidden border border-white/10 bg-black/40 relative">
+            <img src="assets/rims-landing.jpg" alt="RIMS public landing page" class="w-full h-44 object-cover object-top group-hover:scale-105 transition duration-300">
+            <figcaption class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-3 text-[11px] font-mono text-white"><span>Public Landing &amp; Sign-In ↗</span></figcaption>
+          </figure>
+          <figure onclick="openLightbox('assets/rims-demo-dash.jpg', 'RIMS demo tenant — Product Golden Register, fictional data (92 synthetic rows)')" class="group cursor-pointer rounded-2xl overflow-hidden border border-white/10 bg-black/40 relative">
+            <img src="assets/rims-demo-dash.jpg" alt="RIMS demo tenant — product portfolio, fictional data" class="w-full h-44 object-cover object-top group-hover:scale-105 transition duration-300">
+            <figcaption class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-3 text-[11px] font-mono text-white"><span>Demo Portfolio (fictional data) ↗</span></figcaption>
+          </figure>
+          <figure onclick="openLightbox('assets/rims-demo-letter.jpg', 'RIMS Letter Studio — statutory NAFDAC cover letter, fictional demo company (Meridian Demo Pharmaceuticals)')" class="group cursor-pointer rounded-2xl overflow-hidden border border-white/10 bg-black/40 relative">
+            <img src="assets/rims-demo-letter.jpg" alt="RIMS demo tenant — letter studio, fictional data" class="w-full h-44 object-cover object-top group-hover:scale-105 transition duration-300">
+            <figcaption class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-3 text-[11px] font-mono text-white"><span>Demo Letter Studio ↗</span></figcaption>
+          </figure>
+        </div>
+        <p class="mt-3 text-[11px] font-mono text-slate-500">⌖ Exhibition set: live public landing + demo tenant with fictional company data. The production register stays private — full walkthrough on request, under NDA if required.</p>
+
+        <div class="mt-6 p-4 rounded-2xl bg-deep border border-blade/20 text-xs font-mono space-y-3">
+          <div class="flex items-center justify-between text-slate-400 pb-2 border-b border-white/5">
+            <span class="text-blade font-bold uppercase text-[10px]">Interactive RIMS Document Authenticator</span>
+            <span class="text-[10px] text-trace">21 CFR Part 11 Protocol</span>
+          </div>
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+            <div>
+              <div class="text-slate-300 font-bold">Doc Reference: <span class="text-white">NCI-REG-2026-NAFDAC-089</span></div>
+              <div class="text-[11px] text-slate-400 mt-0.5">Author: <strong class="text-white">Onwe Francis Chiemerie</strong> (Regulatory Officer)</div>
+            </div>
+            <button onclick="simulateQrCheck()" id="qr-btn" class="px-4 py-2 rounded-lg bg-blade/10 border border-blade/40 text-blade hover:bg-blade hover:text-black font-bold transition">Verify Digital QR Signature 🔏</button>
+          </div>
+          <div id="qr-result" class="hidden p-3 rounded-xl bg-trace/10 border border-trace/30 text-trace text-[11px] leading-relaxed">
+            ✓ Cryptographic Hash Verified: SHA-256 Validated · Audit Trail Timestamp: 2026-09-17 08:30:14 UTC · Status: Official Tamper-Proof Document.
+          </div>
+        </div>
+
+        <div class="mt-6 flex flex-wrap gap-2 text-xs font-mono">
+          <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/5 text-slate-300">Next.js 15 (App Router)</span>
+          <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/5 text-slate-300">Supabase Postgres + RLS</span>
+          <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/5 text-slate-300">Auth RBAC</span>
+          <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/5 text-slate-300">Playwright E2E</span>
+          <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/5 text-slate-300">Print Design Engine</span>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs font-mono">
+          <span class="text-slate-400">Client-private enterprise system · Walkthrough on request</span>
+          <a href="mailto:francis.onwe@outlook.com?subject=NCI%20RIMS%20Walkthrough%20Request" class="px-5 py-2.5 rounded-xl bg-blade hover:bg-gold text-black font-bold transition">Request Walkthrough ↗</a>
+        </div>
+      </article>
+
+      <!-- PROJECT 02 · room: AI -->
+      <article class="spotlight-card rounded-3xl p-8 sm:p-12 border border-white/10 border-l-4 border-l-trace reveal-on-scroll">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4 text-xs font-mono">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="px-2.5 py-1 rounded bg-trace/10 text-trace font-bold text-[10px] uppercase border border-trace/20">PROJECT 02 · ROOM: AI</span>
+            <span class="text-slate-400">• B2B Prosumer SaaS</span>
+          </div>
+          <span class="text-trace font-bold">● LIVE ON CLOUDFLARE EDGE (23ms)</span>
+        </div>
+
+        <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">Aptframe — Autonomous Prompt Intelligence &amp; Diagnostics Workspace</h3>
+
+        <p class="mt-4 text-sm sm:text-base text-slate-300 leading-relaxed font-light">
+          Eliminates prompt drift and model hallucination. Evaluates drafts across 5 mathematical dimensions (0–100 score) and compiles structured, reusable prompts with 1-click model pre-fills to ChatGPT, Claude, and Gemini. Monetized with Polar ($9.00/mo Pro Founder Plan).
+        </p>
+
+        <div class="metrics-row">
+          <span>5-dimension 0–100 diagnostics</span>
+          <span>ChatGPT · Claude · Gemini pre-fills</span>
+          <span>$9/mo Pro via Polar webhooks</span>
+          <span>23ms global edge response</span>
+        </div>
+
+        <figure onclick="openLightbox('assets/aptframe.jpg', 'Aptframe Prompt Intelligence Workspace with 0-100 diagnostics scoring')" class="mt-8 group cursor-pointer rounded-2xl overflow-hidden border border-white/10 bg-black/40 relative">
+          <img src="assets/aptframe.jpg" alt="Aptframe Workspace" class="w-full h-56 sm:h-72 object-cover object-top group-hover:scale-102 transition duration-500">
+          <figcaption class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end justify-between p-4 text-xs font-mono text-white">
+            <span>Aptframe Diagnostics Engine &amp; Multi-Model Pre-Fill</span>
+            <span class="text-trace">Click to expand preview ↗</span>
+          </figcaption>
+        </figure>
+
+        <div class="mt-6 flex flex-wrap gap-2 text-xs font-mono">
+          <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/5 text-slate-300">Next.js 16 (Turbopack)</span>
+          <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/5 text-slate-300">OpenNext Edge Workers</span>
+          <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/5 text-slate-300">Supabase RLS (30+ Prompts)</span>
+          <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/5 text-slate-300">Polar Webhooks ($9.00/mo)</span>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs font-mono">
+          <span class="text-trace">aptframe-app.onwefrancis123.workers.dev</span>
+          <a href="https://aptframe-app.onwefrancis123.workers.dev" target="_blank" rel="noopener" class="px-5 py-2.5 rounded-xl bg-trace hover:bg-silk text-black font-bold transition flex items-center gap-1.5 shadow-lg shadow-trace/20">Launch Aptframe Live ↗</a>
+        </div>
+      </article>
+
+      <!-- PROJECT 03 · room: EDITORIAL -->
+      <article class="spotlight-card rounded-3xl p-8 sm:p-12 border border-white/10 border-l-4 border-l-blade reveal-on-scroll">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4 text-xs font-mono">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="px-2.5 py-1 rounded bg-blade/10 text-blade font-bold text-[10px] uppercase border border-blade/20">PROJECT 03 · ROOM: EDITORIAL</span>
+            <span class="text-slate-400">• High-Traffic SEO Engine</span>
+          </div>
+          <span class="text-trace font-bold">● LIVE ON CLOUDFLARE PAGES</span>
+        </div>
+
+        <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">ToolForge — Neo-Editorial Creator AI Suite</h3>
+
+        <p class="mt-4 text-sm sm:text-base text-slate-300 leading-relaxed font-light">
+          Creator micro-utility suite built with Neo-Editorial design (70% Swiss Monochrome + 30% Emerald Matrix). Powers 6 dedicated SEO routes including AI Text Humanizer (80+ cliché dictionary), YouTube Title Generator, and LinkedIn Formatter. 100% Schema.org rich snippets with Google AdSense and Chrome Extension integration.
+        </p>
+
+        <div class="metrics-row">
+          <span>6 dedicated SEO routes</span>
+          <span>80+ pattern cliché dictionary</span>
+          <span>Schema.org JSON-LD — 0 errors</span>
+          <span>AdSense + Chrome extension live</span>
+        </div>
+
+        <div class="mt-6 flex flex-wrap gap-2 text-xs font-mono">
+          <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/5 text-slate-300">6 Dedicated SEO Routes</span>
+          <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/5 text-slate-300">Schema.org JSON-LD (0 Errors)</span>
+          <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/5 text-slate-300">Google AdSense</span>
+          <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/5 text-slate-300">Manifest V3 Chrome Extension</span>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs font-mono">
+          <span class="text-trace">toolforge-app.pages.dev</span>
+          <a href="https://toolforge-app.pages.dev" target="_blank" rel="noopener" class="px-5 py-2.5 rounded-xl bg-blade hover:bg-gold text-black font-bold transition flex items-center gap-1.5 shadow-lg shadow-gold/20">Launch ToolForge Live ↗</a>
+        </div>
+      </article>
+
+      <!-- PROJECT 04 · room: EDITORIAL — CLIENT WORK -->
+      <article class="spotlight-card rounded-3xl p-8 sm:p-12 border border-white/10 border-l-4 border-l-trace reveal-on-scroll">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4 text-xs font-mono">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="px-2.5 py-1 rounded bg-trace/10 text-trace font-bold text-[10px] uppercase border border-trace/20">PROJECT 04 · ROOM: EDITORIAL — CLIENT DOCUMENT WORK</span>
+            <span class="text-slate-400">• shown with the client's permission</span>
+          </div>
+          <span class="text-trace font-bold">● 2 ENGAGEMENTS · ONE RETURNING CLIENT</span>
+        </div>
+
+        <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">Exotask &amp; Bytestorm — Paper and Identity for a Software House</h3>
+
+        <p class="mt-4 text-sm sm:text-base text-slate-300 leading-relaxed font-light">
+          Exotask Limited needed documents that looked like it: a corporate letterhead rebuilt to print-and-pixel standard and delivered as press-ready PDF and transparent PNG, revision rounds included. The client came straight back with a second brand — <strong class="text-white font-semibold">Bytestorm Games</strong> — for which I delivered a four-direction logo concept deck, board-ready, from one brief.
+        </p>
+
+        <div class="metrics-row">
+          <span>2 engagements · same principal</span>
+          <span>Letterhead system — PDF + PNG</span>
+          <span>Logo deck — 4 creative directions</span>
+          <span>Repeat business, unasked for</span>
+        </div>
+
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <figure onclick="openLightbox('assets/exotask-letterhead-full.jpg', 'Exotask Limited — corporate letterhead, full sheet (client-approved exhibition)')" class="group cursor-pointer rounded-2xl overflow-hidden border border-white/10 bg-black/40 relative">
+            <img src="assets/exotask-tile.jpg" alt="Exotask Limited letterhead — header block" class="w-full h-48 object-cover object-top group-hover:scale-105 transition duration-300">
+            <figcaption class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end justify-between p-3 text-[11px] font-mono text-white">
+              <span>Exotask Limited · Letterhead System ↗</span><span class="text-trace">full sheet ↗</span>
+            </figcaption>
+          </figure>
+          <figure onclick="openLightbox('assets/bytestorm-full.jpg', 'Bytestorm Games — logo concept 1 of 4, "The Storm Badge" (client-approved exhibition)')" class="group cursor-pointer rounded-2xl overflow-hidden border border-white/10 bg-black/40 relative">
+            <img src="assets/bytestorm-tile.jpg" alt="Bytestorm Games logo concept — The Storm Badge" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300">
+            <figcaption class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end justify-between p-3 text-[11px] font-mono text-white">
+              <span>Bytestorm Games · Logo Concepts 1–4 ↗</span><span class="text-trace">deck page ↗</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="mt-6 p-5 rounded-2xl bg-blade/5 border border-blade/25 text-sm font-light text-slate-200 leading-relaxed">
+          <span class="text-blade font-extrabold text-lg">“Nice. Well done.”</span>
+          <span class="block mt-2 text-xs font-mono text-slate-400">— Chidera Ike, Principal, Exotask Limited · after the letterhead delivery; returned with the Bytestorm identity job on the strength of it.</span>
+        </div>
+
+        <div class="mt-6 flex flex-wrap gap-2 text-xs font-mono">
+          <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/5 text-slate-300">Corporate Letterhead — Print + Digital</span>
+          <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/5 text-slate-300">Brand Logo Concept Deck</span>
+          <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/5 text-slate-300">Client: Chidera Ike — Exotask Ltd / Bytestorm Games</span>
+        </div>
+
+        <p class="mt-6 pt-6 border-t border-white/10 text-[11px] font-mono text-slate-500">Client artifacts exhibited with written permission. Full deck available on request.</p>
+      </article>
+    </div>
+
+    <!-- ABOUT -->
+    <div id="about" class="mt-32 border-t border-white/10 pt-16 reveal-on-scroll">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div class="lg:col-span-5">
+          <div class="relative group">
+            <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-blade/20 to-trace/20 blur-xl opacity-50 group-hover:opacity-90 transition duration-700"></div>
+            <div class="relative rounded-3xl bg-panel border border-white/15 p-2 overflow-hidden shadow-2xl">
+              <img src="assets/francis-lifestyle-hd.jpg" alt="Onwe Francis Chiemerie — Lifestyle Editorial Portrait" class="w-full h-96 sm:h-[460px] object-cover object-top rounded-2xl filter contrast-105 transition duration-500 group-hover:scale-102">
+              <div class="p-3 bg-black/60 rounded-xl mt-2 border border-white/5 text-center font-mono">
+                <div class="text-xs font-bold text-white">Onwe Francis Chiemerie</div>
+                <div class="text-[10px] text-blade font-semibold mt-0.5">Petroleum Engineer · Regulatory Builder · Technical Writer</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 space-y-5 text-sm sm:text-base text-slate-300 leading-relaxed font-light">
+          <span class="text-xs font-bold uppercase tracking-widest text-blade font-mono block">02 · The Man of the House</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">Engineer's Rigour, Writer's Clarity, Builder's Hands.</h2>
+
+          <p>
+            <strong class="text-white font-semibold">Petroleum Engineering graduate (B.Eng., Second Class Upper, FUTO)</strong> with hands-on experience across upstream production operations, drilling-fluids laboratory research, and regulatory compliance — combined with <strong class="text-white font-semibold">3+ years of technical writing</strong> translating complex engineering and scientific subject matter into unambiguous, audience-friendly English.
+          </p>
+          <p>
+            By day, I keep <strong class="text-white font-semibold">50+ products compliant at NCI Pharm Chem</strong> (handling NAFDAC registrations, renewals, and CTD dossiers). Before that, I reviewed operator production reports and field-development plans at the <strong class="text-white font-semibold">Nigerian Upstream Petroleum Regulatory Commission (NUPRC)</strong>, conducted 15+ drilling-fluid tests in FUTO's petroleum lab, and led <strong class="text-white font-semibold">NUESA as the Chapter Executive President twice from the year 2023 to 2025 at the School of Engineering and Engineering Technology, Federal University of Technology Owerri (FUTO).</strong>
+          </p>
+          <p class="p-4 rounded-xl bg-blade/5 border border-blade/20 text-blade font-mono text-xs">
+            "My rule for every tool I ship: it may only claim what it can prove. Dashboards cite their source, AI answers label themselves guidance-only, and regulated software stays honest about its validation status."
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div id="experience" class="mt-32 border-t border-white/10 pt-16 reveal-on-scroll">
+      <div class="border-b border-white/10 pb-4 mb-8">
+        <span class="text-xs font-bold uppercase tracking-widest text-blade font-mono">03 · Career Experience</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mt-1">Where the Judgement Comes From.</h2>
+        <p class="text-xs font-mono text-slate-400 mt-1">Field, factory, regulator, and page — each role taught me a different failure mode of sloppy data.</p>
+      </div>
+
+      <div class="space-y-6 font-mono text-xs">
+        <div class="spotlight-card p-6 rounded-2xl">
+          <div class="flex justify-between items-baseline mb-1">
+            <span class="font-bold text-blade text-sm">Regulatory Officer</span>
+            <span class="text-slate-400">2026 — PRESENT</span>
+          </div>
+          <div class="text-white font-semibold mb-2">NCI Pharm Chem. Ind. · Lagos, Nigeria</div>
+          <p class="text-slate-300 font-sans text-xs leading-relaxed font-light">Manage regulatory tracking for 50+ NAFDAC products. Prepare and review CTD dossiers; built the in-house RIMS compliance platform triggering renewals 3+ months early.</p>
+        </div>
+
+        <div class="spotlight-card p-6 rounded-2xl">
+          <div class="flex justify-between items-baseline mb-1">
+            <span class="font-bold text-trace text-sm">Production Engineering Intern</span>
+            <span class="text-slate-400">OCT 2024 — FEB 2025</span>
+          </div>
+          <div class="text-white font-semibold mb-2">Nigerian Upstream Petroleum Regulatory Commission (NUPRC)</div>
+          <p class="text-slate-300 font-sans text-xs leading-relaxed font-light">Analysed 10+ operator production reports and field development plans (FDP). Applied Petroleum Industry Act (PIA) statutory compliance guidelines.</p>
+        </div>
+
+        <div class="spotlight-card p-6 rounded-2xl">
+          <div class="flex justify-between items-baseline mb-1">
+            <span class="font-bold text-blade text-sm">Freelance Technical Writer</span>
+            <span class="text-slate-400">2023 — PRESENT</span>
+          </div>
+          <div class="text-white font-semibold mb-2">Remote</div>
+          <p class="text-slate-300 font-sans text-xs leading-relaxed font-light">Long-form explainers, structured scripts, and SEO guides with primary source verification and clear narrative arcs.</p>
+        </div>
+
+        <div class="spotlight-card p-6 rounded-2xl">
+          <div class="flex justify-between items-baseline mb-1">
+            <span class="font-bold text-trace text-sm">Research Assistant</span>
+            <span class="text-slate-400">AUG 2023 — APR 2024</span>
+          </div>
+          <div class="text-white font-semibold mb-2">Petroleum Laboratory, FUTO</div>
+          <p class="text-slate-300 font-sans text-xs leading-relaxed font-light">Conducted 15+ drilling-fluid rheology and filtration tests. Improved research data repeatability by ~20% through standardized documentation.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- WRITING -->
+    <div id="writing" class="mt-32 border-t border-white/10 pt-16 reveal-on-scroll">
+      <div class="border-b border-white/10 pb-4 mb-8">
+        <span class="text-xs font-bold uppercase tracking-widest text-blade font-mono">04 · Writing &amp; Credentials</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mt-1">The Page is a Workplace Too.</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-xs">
+        <a href="https://concise-specialist-1a4.notion.site/Francis-Onwe-Technical-Writer-Petroleum-Engineer-3c100baf54788172a9a1fc9423f44cef" target="_blank" rel="noopener" class="spotlight-card p-6 rounded-2xl">
+          <div class="text-2xl mb-2">📄</div>
+          <div class="font-bold text-white text-sm">Technical Explainers</div>
+          <p class="text-slate-400 text-[11px] mt-1 font-sans">Engineering &amp; science translated into clear English.</p>
+          <span class="text-blade mt-4 block font-bold">Read on Notion ↗</span>
+        </a>
+        <a href="https://concise-specialist-1a4.notion.site/Francis-Onwe-Technical-Writer-Petroleum-Engineer-3c100baf54788172a9a1fc9423f44cef" target="_blank" rel="noopener" class="spotlight-card p-6 rounded-2xl">
+          <div class="text-2xl mb-2">🎬</div>
+          <div class="font-bold text-white text-sm">Scripts &amp; Narratives</div>
+          <p class="text-slate-400 text-[11px] mt-1 font-sans">Structured video scripts engineered for retention.</p>
+          <span class="text-blade mt-4 block font-bold">Read on Notion ↗</span>
+        </a>
+        <a href="https://concise-specialist-1a4.notion.site/Francis-Onwe-Technical-Writer-Petroleum-Engineer-3c100baf54788172a9a1fc9423f44cef" target="_blank" rel="noopener" class="spotlight-card p-6 rounded-2xl">
+          <div class="text-2xl mb-2">🔎</div>
+          <div class="font-bold text-white text-sm">SEO Guides</div>
+          <p class="text-slate-400 text-[11px] mt-1 font-sans">Research-verified guides edited without AI fluff.</p>
+          <span class="text-blade mt-4 block font-bold">Read on Notion ↗</span>
+        </a>
+      </div>
+
+      <div class="mt-8 p-6 rounded-2xl bg-panel border border-white/10 text-xs font-mono text-slate-300 space-y-2">
+        <div class="text-blade font-bold uppercase text-[10px]">Certifications, Affiliations &amp; Leadership:</div>
+        <div>• <strong class="text-white">Google AI Essentials</strong> — Google via Coursera</div>
+        <div>• <strong class="text-white">Health, Safety &amp; Environment (HSE) Certification, Levels 1–3 (OSHA)</strong> — Feb 2023</div>
+        <div>• <strong class="text-white">NT'L Banksman &amp; Industrial Rigging</strong> — OTSESO Oil and Gas Limited — 126 Hours; Issued Jul 2024; Valid until Jul 2028</div>
+        <div>• <strong class="text-white">Society of Petroleum Engineers (SPE)</strong> — Student/Young Professional Member, SPE FUTO Chapter</div>
+        <div>• <strong class="text-white">Executive President, Nigerian Universities Engineering Student Association (NUESA) FUTO Chapter:</strong> Elected twice (2023–2025), School of Engineering and Engineering Technology, Federal University of Technology Owerri (FUTO).</div>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div id="contact" class="mt-32 border border-white/10 bg-panel rounded-3xl p-8 sm:p-14 text-center font-mono reveal-on-scroll">
+      <span class="text-xs font-bold uppercase tracking-widest text-blade">05 · Work With Me</span>
+      <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mt-2">Let's Build Works that Own Their Claims.</h2>
+      <p class="text-slate-400 text-xs sm:text-sm max-w-md mx-auto mt-3 font-sans font-light">
+        Available for full-time technical roles, regulatory software architecture, and high-stakes technical writing engagements.
+      </p>
+
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4 text-xs">
+        <a href="mailto:francis.onwe@outlook.com" class="px-8 py-3.5 rounded-xl font-bold bg-blade hover:bg-gold text-black transition shadow-xl shadow-gold/20">📧 francis.onwe@outlook.com</a>
+        <a href="resume.html" class="px-6 py-3.5 rounded-xl font-bold bg-white/5 hover:bg-white/10 border border-white/10 text-slate-200 transition">View Résumé ↓</a>
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-white/5 flex items-center justify-center gap-6 text-xs font-mono text-slate-400">
+        <a href="https://www.linkedin.com/in/onwe-francis-chiemerie-189285237/" target="_blank" rel="noopener" class="hover:text-blade transition flex items-center gap-1.5"><span>💼 LinkedIn</span><span>↗</span></a>
+        <a href="https://github.com/onwefrancis" target="_blank" rel="noopener" class="hover:text-blade transition flex items-center gap-1.5"><span>💻 GitHub</span><span>↗</span></a>
+        <a href="https://concise-specialist-1a4.notion.site/Francis-Onwe-Technical-Writer-Petroleum-Engineer-3c100baf54788172a9a1fc9423f44cef" target="_blank" rel="noopener" class="hover:text-blade transition flex items-center gap-1.5"><span>📝 Notion Writing</span><span>↗</span></a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-white/[0.08]">
+    <div class="max-w-5xl mx-auto px-6 py-7 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
+      <div class="flex items-center gap-3">
+        <svg viewBox="0 0 100 100" class="w-6 h-6" aria-label="ONWE — Ringswipe">
+          <circle cx="50" cy="50" r="35" fill="none" stroke="#bfe3cf" stroke-width="6" stroke-dasharray="13 8"/>
+          <circle cx="50" cy="50" r="23" fill="none" stroke="#d9a441" stroke-width="6" stroke-dasharray="9 7"/>
+          <rect x="6" y="44.5" width="70" height="8" fill="#e8b84b" transform="rotate(-28 50 50)"/>
+        </svg>
+        <span>Onwe Francis Chiemerie © 2026</span>
+      </div>
+      <span>ONWE — works that own their claims · the one who owns</span>
+      <span class="text-slate-600">Ref ONWE/2026/001 · Lagos, Nigeria</span>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('progress-bar').style.width = scrolled + '%';
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+
+    const countObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.getAttribute('data-target'));
+          let count = 0;
+          const step = Math.max(1, Math.floor(target / 30));
+          const interval = setInterval(() => {
+            count += step;
+            if (count >= target) { el.innerText = target + '+'; clearInterval(interval); }
+            else { el.innerText = count; }
+          }, 30);
+          obs.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.count-number').forEach(el => countObserver.observe(el));
+
+    function updateClock() {
+      const now = new Date();
+      const options = { timeZone: 'Africa/Lagos', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
+      document.getElementById('lagos-clock').innerText = 'UTC+1 ' + now.toLocaleTimeString('en-US', options);
+    }
+    setInterval(updateClock, 1000); updateClock();
+
+    function openLightbox(src, caption) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox-caption').innerText = caption;
+      document.getElementById('lightbox-modal').classList.add('active');
+    }
+    function closeLightbox() { document.getElementById('lightbox-modal').classList.remove('active'); }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+    function simulateQrCheck() {
+      const btn = document.getElementById('qr-btn');
+      const res = document.getElementById('qr-result');
+      btn.innerText = 'Verifying Hash... ⏳';
+      setTimeout(() => {
+        btn.innerText = 'Verified (21 CFR Part 11) ✓';
+        btn.className = 'px-4 py-2 rounded-lg bg-trace/10 border border-trace/40 text-trace font-bold transition';
+        res.classList.remove('hidden');
+      }, 600);
+    }
+
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+
+    const particles = [];
+    for (let i = 0; i < 40; i++) {
+      particles.push({
+        x: Math.random() * width, y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.4, vy: (Math.random() - 0.5) * 0.4,
+        radius: Math.random() * 1.5 + 0.5
+      });
+    }
+
+    function animateParticles() {
+      if (!canvas.isConnected) return;
+      ctx.clearRect(0, 0, width, height);
+      ctx.fillStyle = 'rgba(232, 184, 75, 0.38)';
+      ctx.strokeStyle = 'rgba(191, 227, 207, 0.035)';
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0) p.x = width; if (p.x > width) p.x = 0;
+        if (p.y < 0) p.y = height; if (p.y > height) p.y = 0;
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2); ctx.fill();
+        for (let j = i + 1; j < particles.length; j++) {
+          const p2 = particles[j];
+          const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+          if (dist < 120) { ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p2.x, p2.y); ctx.stroke(); }
+        }
+      }
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+  </script>
+</body>
+</html>
