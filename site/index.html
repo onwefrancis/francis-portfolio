@@ -68,6 +68,15 @@
       box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 35px rgba(217, 164, 65, 0.13);
       transform: translateY(-3px);
     }
+    .room-btn { cursor: pointer; transition: background 0.25s ease, border-color 0.25s ease; text-align: left; }
+    .room-btn:hover, .room-btn:focus-visible { background: rgba(191,227,207,0.06); outline: none; }
+    .room-btn.active { background: rgba(232,184,75,0.08); }
+    .room-btn.active .room-name { color: #e8b84b; }
+    .room-tab { font-family:'JetBrains Mono',monospace; font-size:11px; padding:0.55rem 1.1rem; border-radius:999px;
+      border:1px solid rgba(255,255,255,0.12); color:#94a3b8; white-space:nowrap; transition:all .25s ease; cursor:pointer; }
+    .room-tab:hover { border-color:rgba(232,184,75,0.5); color:#bfe3cf; }
+    .room-tab.active { background:#e8b84b; border-color:#e8b84b; color:#000; font-weight:700; }
+    .room-hidden { display:none; }
     .metrics-row { display: flex; flex-wrap: wrap; gap: 1rem 1.75rem; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.1rem; margin-top: 1.4rem; }
     .metrics-row span { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #bfe3cf; display: inline-flex; align-items: center; gap: 0.45rem; }
     .metrics-row span::before { content: "▸"; color: #e8b84b; font-size: 10px; }
@@ -218,26 +227,26 @@
     <!-- THE FOUR ROOMS -->
     <div class="mt-20 reveal-on-scroll">
       <div class="grid grid-cols-2 lg:grid-cols-4 border border-white/10 rounded-2xl overflow-hidden gap-px bg-white/[0.07] backdrop-blur-xl">
-        <div class="p-5 border-l-2 border-l-blade">
+        <button class="room-btn p-5 bg-panel/60 border-l-2 border-l-blade" data-room="regulatory" onclick="setRoom('regulatory',true)">
           <div class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Room 01</div>
-          <div class="text-sm font-extrabold text-blade tracking-wide mt-1">REGULATORY</div>
+          <div class="room-name text-sm font-extrabold text-blade tracking-wide mt-1">REGULATORY</div>
           <p class="text-[11px] text-slate-400 font-light mt-1.5 leading-relaxed">Compliance systems, dossiers, letters. Leads in public — the first room.</p>
-        </div>
-        <div class="p-5">
+        </button>
+        <button class="room-btn p-5 bg-panel/60" data-room="editorial" onclick="setRoom('editorial',true)">
           <div class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Room 02</div>
-          <div class="text-sm font-extrabold text-white tracking-wide mt-1">EDITORIAL</div>
+          <div class="room-name text-sm font-extrabold text-white tracking-wide mt-1">EDITORIAL</div>
           <p class="text-[11px] text-slate-400 font-light mt-1.5 leading-relaxed">Documents, guides and engines that carry their sources.</p>
-        </div>
-        <div class="p-5">
+        </button>
+        <button class="room-btn p-5 bg-panel/60" data-room="motion" onclick="setRoom('motion',true)">
           <div class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Room 03</div>
-          <div class="text-sm font-extrabold text-white tracking-wide mt-1">MOTION</div>
+          <div class="room-name text-sm font-extrabold text-white tracking-wide mt-1">MOTION</div>
           <p class="text-[11px] text-slate-400 font-light mt-1.5 leading-relaxed">Scripts and narratives engineered for retention.</p>
-        </div>
-        <div class="p-5">
+        </button>
+        <button class="room-btn p-5 bg-panel/60" data-room="ai" onclick="setRoom('ai',true)">
           <div class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Room 04</div>
-          <div class="text-sm font-extrabold text-white tracking-wide mt-1">AI</div>
+          <div class="room-name text-sm font-extrabold text-white tracking-wide mt-1">AI</div>
           <p class="text-[11px] text-slate-400 font-light mt-1.5 leading-relaxed">Diagnostics that output only verifiable claims.</p>
-        </div>
+        </button>
       </div>
     </div>
 
@@ -268,11 +277,29 @@
           <span class="text-xs font-bold uppercase tracking-widest text-blade font-mono">01 · Featured Software &amp; Client Work</span>
           <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mt-1">Systems I Own, Work They Returned For.</h2>
         </div>
-        <span class="text-xs font-mono text-slate-400 hidden sm:inline">Designed, Built &amp; Deployed</span>
+        <span class="text-xs font-mono text-slate-400 hidden sm:inline" id="work-count">4 works · all rooms</span>
       </div>
 
+      <div class="flex gap-2.5 overflow-x-auto py-1 -mx-1 px-1 reveal-on-scroll" role="tablist" aria-label="Filter works by room">
+        <button class="room-tab active" data-room="all" onclick="setRoom('all')">ALL ROOMS</button>
+        <button class="room-tab" data-room="regulatory" onclick="setRoom('regulatory')">REGULATORY</button>
+        <button class="room-tab" data-room="editorial" onclick="setRoom('editorial')">EDITORIAL</button>
+        <button class="room-tab" data-room="motion" onclick="setRoom('motion')">MOTION</button>
+        <button class="room-tab" data-room="ai" onclick="setRoom('ai')">AI</button>
+      </div>
+
+      <article id="room-motion-empty" data-room="motion" class="spotlight-card rounded-3xl p-8 sm:p-12 border border-white/10 border-l-4 border-l-blade room-hidden">
+        <div class="flex flex-wrap items-center gap-2 mb-4 text-xs font-mono">
+          <span class="px-2.5 py-1 rounded bg-blade/10 text-blade font-bold text-[10px] uppercase border border-blade/20">ROOM: MOTION</span>
+        </div>
+        <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">The stage is lit; the first production is not hung yet.</h3>
+        <p class="mt-4 text-sm sm:text-base text-slate-300 leading-relaxed font-light max-w-2xl">
+          Scripts and narratives live in the workshop — this house hangs a work in this room only when it can own its claim in public. Until that day, the nearest artifacts are my <a href="https://concise-specialist-1a4.notion.site/Francis-Onwe-Technical-Writer-Petroleum-Engineer-3c100baf54788172a9a1fc9423f44cef" target="_blank" rel="noopener" class="text-blade hover:text-gold font-semibold transition">Scripts &amp; Narratives on Notion ↗</a>.
+        </p>
+      </article>
+
       <!-- PROJECT 01 · room: REGULATORY -->
-      <article class="spotlight-card rounded-3xl p-8 sm:p-12 border border-white/10 border-l-4 border-l-blade reveal-on-scroll">
+      <article data-room="regulatory" class="spotlight-card rounded-3xl p-8 sm:p-12 border border-white/10 border-l-4 border-l-blade reveal-on-scroll">
         <div class="flex flex-wrap items-center justify-between gap-3 mb-4 text-xs font-mono">
           <div class="flex items-center gap-2 flex-wrap">
             <span class="px-2.5 py-1 rounded bg-blade/10 text-blade font-bold text-[10px] uppercase border border-blade/20">PROJECT 01 · ROOM: REGULATORY</span>
@@ -342,7 +369,7 @@
       </article>
 
       <!-- PROJECT 02 · room: AI -->
-      <article class="spotlight-card rounded-3xl p-8 sm:p-12 border border-white/10 border-l-4 border-l-trace reveal-on-scroll">
+      <article data-room="ai" class="spotlight-card rounded-3xl p-8 sm:p-12 border border-white/10 border-l-4 border-l-trace reveal-on-scroll">
         <div class="flex flex-wrap items-center justify-between gap-3 mb-4 text-xs font-mono">
           <div class="flex items-center gap-2 flex-wrap">
             <span class="px-2.5 py-1 rounded bg-trace/10 text-trace font-bold text-[10px] uppercase border border-trace/20">PROJECT 02 · ROOM: AI</span>
@@ -386,7 +413,7 @@
       </article>
 
       <!-- PROJECT 03 · room: EDITORIAL -->
-      <article class="spotlight-card rounded-3xl p-8 sm:p-12 border border-white/10 border-l-4 border-l-blade reveal-on-scroll">
+      <article data-room="editorial" class="spotlight-card rounded-3xl p-8 sm:p-12 border border-white/10 border-l-4 border-l-blade reveal-on-scroll">
         <div class="flex flex-wrap items-center justify-between gap-3 mb-4 text-xs font-mono">
           <div class="flex items-center gap-2 flex-wrap">
             <span class="px-2.5 py-1 rounded bg-blade/10 text-blade font-bold text-[10px] uppercase border border-blade/20">PROJECT 03 · ROOM: EDITORIAL</span>
@@ -422,7 +449,7 @@
       </article>
 
       <!-- PROJECT 04 · room: EDITORIAL — CLIENT WORK -->
-      <article class="spotlight-card rounded-3xl p-8 sm:p-12 border border-white/10 border-l-4 border-l-trace reveal-on-scroll">
+      <article data-room="editorial" class="spotlight-card rounded-3xl p-8 sm:p-12 border border-white/10 border-l-4 border-l-trace reveal-on-scroll">
         <div class="flex flex-wrap items-center justify-between gap-3 mb-4 text-xs font-mono">
           <div class="flex items-center gap-2 flex-wrap">
             <span class="px-2.5 py-1 rounded bg-trace/10 text-trace font-bold text-[10px] uppercase border border-trace/20">PROJECT 04 · ROOM: EDITORIAL — CLIENT DOCUMENT WORK</span>
@@ -629,6 +656,25 @@
   </footer>
 
   <script>
+    function setRoom(room, scrollToWork) {
+      const counts = { all: 4, regulatory: 1, editorial: 2, motion: 0, ai: 1 };
+      document.querySelectorAll('#work > article[data-room]').forEach(a => {
+        a.classList.toggle('room-hidden', room !== 'all' && a.dataset.room !== room);
+      });
+      const motionEmpty = document.getElementById('room-motion-empty');
+      if (motionEmpty) motionEmpty.classList.toggle('room-hidden', room !== 'motion');
+      document.querySelectorAll('.room-tab, .room-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.room === room || (room === 'all' && b.dataset.room === 'all'));
+      });
+      const wc = document.getElementById('work-count');
+      if (wc) wc.textContent = room === 'all' ? '4 works · all rooms' : (counts[room] === 0 ? 'no works hung yet · ' + room + ' room' : counts[room] + (counts[room] === 1 ? ' work' : ' works') + ' · ' + room + ' room');
+      if (scrollToWork) document.getElementById('work').scrollIntoView({ behavior: 'smooth' });
+    }
+    (function () {
+      const m = location.hash.match(/^#room-(regulatory|editorial|motion|ai)$/);
+      if (m) setRoom(m[1]);
+    })();
+
     window.addEventListener('scroll', () => {
       const winScroll = document.documentElement.scrollTop;
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
