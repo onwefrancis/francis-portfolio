@@ -96,6 +96,8 @@
       background:#e8b84b;color:#000;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;
       padding:.7rem 1.3rem;border-radius:.7rem;opacity:0;pointer-events:none;transition:all .3s ease}
     #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+      .copy-chip{padding:.78rem 1.2rem;border-radius:.75rem;font-family:inherit;font-size:inherit;font-weight:600;color:#cbd5e1;background:rgba(148,163,184,.07);border:1px solid rgba(148,163,184,.16);cursor:pointer;transition:color .18s,border-color .18s,background .18s;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem}
+      .copy-chip:hover{color:#d4af37;border-color:rgba(212,175,55,.55);background:rgba(212,175,55,.07)}
     .kbd-hint{font-family:'JetBrains Mono',monospace;font-size:10px;border:1px solid rgba(255,255,255,0.15);
       border-radius:.45rem;padding:.2rem .5rem;color:#94a3b8;cursor:pointer}
     .kbd-hint:hover{border-color:#e8b84b;color:#e8b84b}
@@ -674,8 +676,13 @@
 
       <div class="mt-8 flex flex-wrap items-center justify-center gap-4 text-xs">
         <a href="mailto:francis.onwe@outlook.com" class="px-8 py-3.5 rounded-xl font-bold bg-blade hover:bg-gold text-black transition shadow-xl shadow-gold/20">📧 francis.onwe@outlook.com</a>
+        <button type="button" onclick="copyEmail()" title="Copy the email address to your clipboard" class="copy-chip">⧉ Copy</button>
+        <button type="button" onclick="saveVcard()" title="Download a contact card your phone can import" class="copy-chip">▤ Save contact</button>
+        <a href="mailto:francis.onwe@outlook.com?subject=15-minute%20intro%20call&amp;body=Hi%20Francis%20—%20found%20you%20through%20the%20portfolio.%0A%0AA%20good%20window%20for%20me%20(Lagos%2C%20WAT)%3A" title="Mail me two good windows — I reply with a confirmed slot" class="copy-chip">◷ Book 15 min</a>
         <a href="resume.html" class="px-6 py-3.5 rounded-xl font-bold bg-white/5 hover:bg-white/10 border border-white/10 text-slate-200 transition">View Résumé ↓</a>
       </div>
+
+      <p class="mt-5 text-[11px] font-mono text-slate-500">Replies within one working day · Lagos time (WAT) · no forms — mail arrives as mail.</p>
 
       <div class="mt-8 pt-6 border-t border-white/5 flex items-center justify-center gap-6 text-xs font-mono text-slate-400">
         <a href="https://www.linkedin.com/in/onwe-francis-chiemerie-189285237/" target="_blank" rel="noopener" class="hover:text-blade transition flex items-center gap-1.5"><span>💼 LinkedIn</span><span>↗</span></a>
@@ -736,7 +743,9 @@
       { t: 'Room · Motion', k: 'room motion script video narrative', tag: 'filter', run: () => setRoom('motion', true) },
       { t: 'Room · AI', k: 'room ai aptframe prompt diagnostics', tag: 'filter', run: () => setRoom('ai', true) },
       { t: 'All rooms', k: 'all rooms filter reset', tag: 'filter', run: () => setRoom('all', true) },
-      { t: 'Copy email address', k: 'copy email contact outlook mail', tag: 'action', run: () => { navigator.clipboard.writeText('francis.onwe@outlook.com').then(() => toast('francis.onwe@outlook.com — copied')); } },
+      { t: 'Copy email address', k: 'copy email contact outlook mail', tag: 'action', run: copyEmail },
+      { t: 'Save contact card (.vcf)', k: 'vcard save contact phone ios android address book', tag: 'action', run: saveVcard },
+      { t: 'Book a 15-minute intro call', k: 'calendar call meeting schedule book slot intro', tag: 'action', run: () => { location.href = 'mailto:francis.onwe@outlook.com?subject=15-minute%20intro%20call'; } },
       { t: 'Open PDF résumé', k: 'resume cv pdf download', tag: 'action', run: () => window.open('assets/Onwe-Francis-Chiemerie-Resume.pdf', '_blank') },
       { t: 'Case file · NCI RIMS', k: 'case study rims regulatory architecture nci', tag: 'case', run: () => openCase('rims') },
       { t: 'Case file · Aptframe', k: 'case study aptframe ai prompt', tag: 'case', run: () => openCase('aptframe') },
@@ -754,6 +763,32 @@
       const t = document.getElementById('toast');
       t.textContent = msg; t.classList.add('show');
       clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('show'), 2200);
+    }
+    const HOUSE_EMAIL = 'francis.onwe@outlook.com';
+    function copyEmail() {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(HOUSE_EMAIL).then(() => toast(HOUSE_EMAIL + ' — copied')).catch(() => legacyCopy());
+      } else legacyCopy();
+    }
+    function legacyCopy() {
+      const i = document.createElement('textarea');
+      i.value = HOUSE_EMAIL; i.style.position = 'fixed'; i.style.opacity = '0';
+      document.body.appendChild(i); i.select();
+      try { document.execCommand('copy'); toast(HOUSE_EMAIL + ' — copied'); } catch (e) { toast(HOUSE_EMAIL); }
+      i.remove();
+    }
+    function saveVcard() {
+      const v = ['BEGIN:VCARD', 'VERSION:3.0', 'N:Onwe;Francis;Chiemerie;;', 'FN:Onwe Francis Chiemerie', 'ORG:ONWE',
+        'TITLE:Senior Software & Regulatory-Systems Engineer', 'EMAIL;TYPE=INTERNET,WORK:' + HOUSE_EMAIL,
+        'URL:https://onwefrancis.pages.dev', 'ADR;TYPE=WORK:;;Lagos;Lagos;;Nigeria',
+        'NOTE:Works that own their claims — software · regulatory systems · technical narratives.',
+        'END:VCARD'].join('\r\n');
+      const b = new Blob([v], { type: 'text/vcard;charset=utf-8' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(b); a.download = 'onwe-francis.vcf';
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+      toast('Contact card saved — onwe-francis.vcf');
     }
     function renderCmdk(q) {
       const query = (q || '').toLowerCase();
