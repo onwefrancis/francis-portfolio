@@ -167,7 +167,7 @@
     <div class="flex items-center gap-4">
       <a href="https://www.linkedin.com/in/onwe-francis-chiemerie-189285237/" target="_blank" rel="noopener" class="hover:text-blade transition text-slate-400 hidden sm:inline">LinkedIn ↗</a>
       <a href="https://github.com/onwefrancis" target="_blank" rel="noopener" class="hover:text-blade transition text-slate-400 hidden sm:inline">GitHub ↗</a>
-      <a href="resume.html" class="text-blade hover:text-gold transition font-bold flex items-center gap-1.5">
+      <a href="resume.html" class="hover:text-blade transition text-slate-400 flex items-center gap-1.5">
         <span>View Résumé</span><span>↓</span>
       </a>
     </div>
@@ -199,19 +199,22 @@
 
     <div class="flex items-center gap-3">
       <span class="kbd-hint hidden sm:inline" onclick="openCmdk()" title="Command palette">Ctrl K</span>
-      <a href="resume.html" class="px-4 py-2 rounded-xl text-xs font-bold bg-blade hover:bg-gold text-black font-mono transition shadow-lg shadow-gold/20 flex items-center gap-1.5">
+      <a href="resume.html" class="whitespace-nowrap px-5 py-2.5 rounded-xl text-xs font-bold bg-blade hover:bg-gold text-black font-mono transition shadow-lg shadow-gold/25 flex items-center gap-1.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blade">
         <span>Get Résumé</span><span>↓</span>
       </a>
     </div>
   </header>
 
   <!-- mobile room rail -->
-  <div class="md:hidden sticky top-[73px] z-30 bg-deep/90 backdrop-blur-xl border-b border-white/[0.06] px-5 py-2 flex gap-5 overflow-x-auto text-[10px] font-mono text-slate-400 whitespace-nowrap">
-    <span class="text-blade font-bold">REGULATORY</span><span>·</span><span>EDITORIAL</span><span>·</span><span>MOTION</span><span>·</span><span>AI</span>
-    <span class="text-slate-600">— the four rooms of the house</span>
+  <div class="md:hidden sticky top-[73px] z-30 bg-deep/90 backdrop-blur-xl border-b border-white/[0.06] px-5 py-2.5 flex gap-5 overflow-x-auto text-[10px] font-mono text-slate-400 whitespace-nowrap">
+    <a href="#work" class="hover:text-blade transition">01. SYSTEMS</a>
+    <a href="#about" class="hover:text-blade transition">02. THE MAN</a>
+    <a href="#experience" class="hover:text-blade transition">03. CAREER</a>
+    <a href="#writing" class="hover:text-blade transition">04. WRITING</a>
+    <a href="#contact" class="hover:text-blade transition">05. CONTACT</a>
   </div>
 
-  <main class="relative z-10 flex-1 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-20 pb-24">
+  <main class="relative z-10 flex-1 min-w-0 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-20 pb-24">
 
     <!-- HERO -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center reveal-on-scroll">
@@ -221,24 +224,24 @@
           <span>ENGR. O. F. CHIEMERIE — PRINCIPAL, ONWE HOUSE</span>
         </div>
 
-        <h1 class="text-4xl sm:text-[3.4rem] font-extrabold text-white tracking-tight leading-[1.08]">
+        <h1 class="text-[1.95rem] sm:text-[3.4rem] font-extrabold text-white tracking-tight leading-[1.12]">
           Petroleum engineer turned <span class="text-blade">regulatory-tech builder</span>, AI architect, and technical writer.
         </h1>
 
-        <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-light">
+        <p class="text-base sm:text-lg text-slate-200 leading-relaxed">
           I keep <strong class="text-white font-semibold">50+ NAFDAC-regulated products compliant</strong> at NCI Pharm Chem. When standard industry software lacks rigorous audit proof, I design, code, and deploy production systems: immutable audit trails, print-perfect regulatory document studios, and AI that only outputs verifiable claims.
         </p>
 
-        <p class="text-xs font-mono text-slate-400 tracking-wide">
+        <p class="text-[13px] font-mono text-slate-400 tracking-wide leading-relaxed">
           "Every system must be traceable, evidence-based, and honest about what it can prove."
         </p>
 
-        <div class="pt-2 flex flex-wrap items-center gap-4 text-xs font-mono">
-          <a href="#work" class="px-7 py-3.5 rounded-xl font-bold bg-blade hover:bg-gold text-black transition shadow-xl shadow-gold/25 flex items-center gap-2">
-            <span>Explore Shipped Systems</span><span>↓</span>
+        <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 text-xs font-mono">
+          <a href="resume.html" class="w-full sm:w-auto min-h-[48px] justify-center px-7 py-3.5 rounded-xl font-bold bg-blade hover:bg-gold text-black transition shadow-xl shadow-gold/25 flex items-center gap-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blade">
+            <span>View Interactive Résumé</span><span>↓</span>
           </a>
-          <a href="resume.html" class="px-6 py-3.5 rounded-xl font-bold bg-white/5 hover:bg-white/10 border border-white/10 text-slate-200 transition flex items-center gap-2">
-            <span>View Interactive Résumé</span>
+          <a href="#work" class="w-full sm:w-auto min-h-[48px] justify-center px-6 py-3.5 rounded-xl font-semibold bg-white/5 hover:bg-white/10 border border-white/15 text-slate-300 transition flex items-center gap-2">
+            <span>Explore Shipped Systems</span><span>↓</span>
           </a>
         </div>
       </div>
@@ -319,7 +322,7 @@
         <span class="text-xs font-mono text-slate-400 hidden sm:inline" id="work-count">4 works · all rooms</span>
       </div>
 
-      <div class="flex gap-2.5 overflow-x-auto py-1 -mx-1 px-1 reveal-on-scroll" role="tablist" aria-label="Filter works by room">
+      <div class="flex min-w-0 w-full max-w-full gap-2.5 overflow-x-auto py-1 -mx-1 px-1 reveal-on-scroll" role="tablist" aria-label="Filter works by room">
         <button class="room-tab active" data-room="all" onclick="setRoom('all')">ALL ROOMS</button>
         <button class="room-tab" data-room="regulatory" onclick="setRoom('regulatory')">REGULATORY</button>
         <button class="room-tab" data-room="editorial" onclick="setRoom('editorial')">EDITORIAL</button>
