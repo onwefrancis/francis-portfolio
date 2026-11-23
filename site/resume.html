@@ -9,19 +9,34 @@
 <style>
 *,*::before,*::after{box-sizing:border-box}
 :root{--paper:#f7f4ec;--card:#fffdf8;--ink:#15130f;--soft:#57514a;--faint:#8b8378;
-  --rule:#e2dacb;--green:#15573a;--green-dk:#0e3b26;--brand:#c9470f;
+  --rule:#e2dacb;--green:#15573a;--green-dk:#0e3b26;--brand:#b8780d;
   --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace}
-body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.62 var(--sans);-webkit-font-smoothing:antialiased}
+body{margin:0;background:#04100b;color:var(--ink);font:16px/1.62 var(--sans);-webkit-font-smoothing:antialiased}
 a{color:var(--green)}
-.bar{border-bottom:1px solid var(--rule);background:rgba(247,244,236,.94);position:sticky;top:0;z-index:10;backdrop-filter:blur(8px)}
+.bar{border-bottom:1px solid rgba(255,255,255,.1);background:#04100b;position:sticky;top:0;z-index:10}
+.bar .lk{display:flex;align-items:center;gap:11px;text-decoration:none}
+.bar .tile{width:38px;height:38px;border-radius:10px;flex:none;display:grid;place-items:center;
+  background:#061a10;border:1px solid rgba(255,255,255,.17)}
+.bar .tile svg{width:25px;height:25px}
+.bar .wm{display:block;font:800 13.5px/1 var(--sans);letter-spacing:.22em;color:#fff}
+.bar .tg{display:block;font:400 8.5px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(228,237,231,.62);margin-top:5px}
+@media(prefers-reduced-motion:no-preference){
+  .spin-slow{transform-origin:50% 50%;animation:spin 42s linear infinite}
+  .spin-slower{transform-origin:50% 50%;animation:spin 66s linear infinite reverse}}
+@keyframes spin{to{transform:rotate(360deg)}}
 .bar .in{max-width:900px;margin:0 auto;padding:14px 26px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
-.bar b{font:600 15.5px/1.3 var(--sans)} .bar small{display:block;font:400 12px/1.4 var(--mono);color:var(--faint)}
+.bar b{font:600 15.5px/1.3 var(--sans);color:#fff} .bar small{display:block;font:400 12px/1.4 var(--mono);color:rgba(228,237,231,.62)}
 .acts{display:flex;gap:9px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;text-decoration:none;font:600 13.5px/1 var(--sans);padding:11px 15px;border-radius:8px;border:1px solid var(--rule);background:var(--card);color:var(--ink)}
-.btn.p{background:var(--green);color:#fff;border-color:var(--green)}
-.sheet{max-width:900px;margin:34px auto 70px;background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:52px 56px 56px}
+.btn{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font:600 13.5px/1 var(--sans);
+  padding:11px 15px;border-radius:7px;border:1px solid rgba(255,255,255,.17);background:transparent;color:#f3f7f4;
+  transition:border-color .2s,color .2s}
+.btn:hover{border-color:#e8b84b;color:#e8b84b}
+.btn.p{background:#e8b84b;color:#0b1409;border-color:#e8b84b}
+.btn.p:hover{background:#f6cc63;color:#0b1409}
+.sheet{max-width:900px;margin:34px auto 70px;background:#fffdf8;border:1px solid var(--rule);border-radius:12px;padding:52px 56px 56px}
 h1{font:600 36px/1.1 var(--serif);margin:0;letter-spacing:-.02em}
 .role{font:400 15px/1.5 var(--mono);color:var(--brand);margin:9px 0 0}
 .meta{font:400 13.5px/1.9 var(--mono);color:var(--faint);margin:16px 0 0;padding-top:16px;border-top:1px solid var(--rule)}
@@ -58,9 +73,18 @@ ul.flat li b{color:var(--ink)}
 
 <div class="bar">
   <div class="in">
-    <div><b>Onwe Francis Chiemerie — Résumé</b><small>Readable on any device · print or download below</small></div>
+    <a class="lk" href="v2">
+      <span class="tile">
+        <svg viewBox="0 0 100 100" aria-label="ONWE — Ringswipe">
+          <g class="spin-slow"><circle cx="50" cy="50" r="35" fill="none" stroke="#bfe3cf" stroke-width="6" stroke-dasharray="13 8"/></g>
+          <g class="spin-slower"><circle cx="50" cy="50" r="23" fill="none" stroke="#d9a441" stroke-width="6" stroke-dasharray="9 7"/></g>
+          <rect x="6" y="44.5" width="70" height="8" fill="#e8b84b" transform="rotate(-28 50 50)"/>
+        </svg>
+      </span>
+      <span><span class="wm">ONWE</span><span class="tg">works that own their claims</span></span>
+    </a>
     <div class="acts">
-      <a class="btn" href="index.html">← Portfolio</a>
+      <a class="btn" href="v2"><span>←</span> Portfolio</a>
       <a class="btn" href="assets/Onwe-Francis-Chiemerie-Resume.pdf" target="_blank" rel="noopener">Open PDF ↗</a>
       <a class="btn p" href="assets/Onwe-Francis-Chiemerie-Resume.pdf" download>Download PDF</a>
     </div>
