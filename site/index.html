@@ -286,6 +286,12 @@ dl.spec dd{margin:0;font:400 13px/1.7 var(--mono);color:var(--mint)}
   box-shadow:0 14px 34px -22px rgba(14,26,20,.5)}
 .work .plate{height:168px;overflow:hidden;border-bottom:1px solid var(--line-l);background:var(--obsidian)}
 .work .plate img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.work .plate.shot-lb{cursor:zoom-in;position:relative}
+.work .plate.shot-lb::after{content:"Enlarge";position:absolute;right:9px;bottom:9px;
+  padding:4px 9px;border-radius:3px;background:rgba(4,16,11,.82);border:1px solid var(--line-d2);
+  font:500 9.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mint);
+  opacity:0;transition:opacity var(--t) var(--e)}
+.work .plate.shot-lb:hover::after{opacity:1}
 .routes{height:168px;border-bottom:1px solid var(--line-l);background:var(--obsidian);
   display:flex;flex-direction:column;justify-content:center;gap:0;padding:0}
 .routes button{display:flex;align-items:center;gap:10px;padding:9px 18px;
@@ -726,17 +732,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;
       </article>
 
       <article data-r style="--d:35ms">
-        <div class="routes" id="routes" role="tablist" aria-label="ToolForge routes">
-          <button role="tab" aria-selected="true"  data-note="Rewrites machine-flat copy against an 80+ entry cliché dictionary.">/ai-text-humanizer</button>
-          <button role="tab" aria-selected="false" data-note="Generates and ranks title variants for click-through.">/youtube-title-generator</button>
-          <button role="tab" aria-selected="false" data-note="Restructures posts for the LinkedIn feed's line-break rules.">/linkedin-formatter</button>
-          <p class="note" id="routeNote">Rewrites machine-flat copy against an 80+ entry cliché dictionary.</p>
+        <div class="plate shot-lb" data-lb="/assets/toolforge-landing.jpg" data-cap="ToolForge — Precision AI &amp; Creator Tools · six utilities, live on Cloudflare Pages">
+          <img src="/assets/toolforge-landing.jpg" alt="ToolForge landing page, showing the six utility routes"
+               width="1400" height="804" loading="lazy" decoding="async">
         </div>
         <div class="in">
           <span class="st">Live · Programmatic SEO suite</span>
           <h3>ToolForge</h3>
-          <p>A Programmatic SEO creator utility suite — six utilities on dedicated routes, each with
-          Schema.org structured data, AdSense units, and a Manifest V3 Chrome extension.</p>
+          <p>A Programmatic SEO creator utility suite — six utilities on dedicated routes. The
+          humanizer rewrites machine-flat copy against an 80+ entry cliché dictionary. Schema.org
+          rich results verified in Search Console, AdSense units, Manifest V3 Chrome extension.</p>
           <p class="go"><a href="https://toolforge-app.pages.dev/" target="_blank" rel="noopener">Open ToolForge ↗</a></p>
         </div>
       </article>
@@ -855,7 +860,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;
         <ul class="ledger">
           <li><span><b>B.Eng. Petroleum Engineering</b><br>Second Class Upper · FUTO</span><span class="m num">3.55/5.00<br>Aug 2020 – Oct 2025</span></li>
           <li><span><b>GMNSE</b><br>Nigerian Society of Engineers</span><span class="m">Graduate<br>Member</span></li>
-          <li><span><b>P-COREN</b><br>Council for the Regulation of Engineering in Nigeria</span><span class="m">Probationer</span></li>
+          <li><span><b>P-COREN</b><br>Council for the Regulation of Engineering in Nigeria</span><span class="m">Pupil</span></li>
           <li><span><b>SPE</b><br>Society of Petroleum Engineers, FUTO Chapter</span><span class="m">Member</span></li>
           <li><span><b>Executive President, NUESA FUTO</b><br>Elected twice</span><span class="m num">2023–2025</span></li>
           <li><span><b>HSE Levels 1–3 (OSHA)</b></span><span class="m num">Feb 2023</span></li>
@@ -1047,16 +1052,7 @@ addEventListener("resize", function(){
 });
 
 /* ---------- ToolForge route previews ---------- */
-var routes = $("#routes");
-if(routes){
-  var rbtns = $$("button", routes), rnote = $("#routeNote");
-  rbtns.forEach(function(b){
-    b.addEventListener("click", function(){
-      rbtns.forEach(function(x){ x.setAttribute("aria-selected", x===b ? "true":"false") });
-      rnote.textContent = b.getAttribute("data-note");
-    });
-  });
-}
+/* ToolForge route tabs removed: a real screenshot now carries the evidence. */
 
 /* ---------- lightbox ---------- */
 var lb = $("#lightbox"), lbimg = $("#lbimg"), lbcap = $("#lbcap"), xclose = $("#xclose");
