@@ -1,47 +1,478 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full bg-[#04100b] text-slate-100">
+<html lang="en">
 <head>
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Onwe Francis Chiemerie — Résumé</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap');
-    body { font-family: 'Plus Jakarta Sans', sans-serif; }
-    .font-mono { font-family: 'JetBrains Mono', monospace; }
-  </style>
-</head>
-<body class="min-h-full bg-[#04100b] text-slate-100">
-  <header class="sticky top-0 z-50 border-b border-white/10 bg-[#04100b]/95 backdrop-blur-xl px-4 sm:px-6 py-4">
-    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-3">
-      <div>
-        <h1 class="text-lg sm:text-xl font-extrabold text-white">Onwe Francis Chiemerie — Résumé</h1>
-        <p class="text-xs text-slate-400 font-mono">Preview the official CV first, then download or print from the PDF viewer.</p>
-      </div>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Onwe Francis Chiemerie — Résumé · ONWE</title>
+<meta name="description" content="Résumé of Onwe Francis Chiemerie — Regulatory Affairs Officer, Compliance Software Architect, Petroleum Engineer. Lagos, Nigeria.">
+<meta name="theme-color" content="#04100B">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --obsidian:#04100B; --slate:#091A13; --stone:#F4F2EC; --paper:#FAF9F5;
+  --gold:#E8B84B; --gold-h:#D9A441; --mint:#BFE3CF;
+  --ink:#F3F7F4; --ink-3:rgba(243,247,244,.62);
+  --dk:#0E1A14; --dk-2:#36453E; --dk-3:#5E6E66;
+  --line-d:rgba(255,255,255,.10); --line-d2:rgba(255,255,255,.18);
+  --line-l:rgba(14,26,20,.15); --line-l2:rgba(14,26,20,.28);
+  --sans:'Plus Jakarta Sans',system-ui,sans-serif;
+  --body:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --e:cubic-bezier(.22,1,.36,1); --t:180ms;
+}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:130px}
+body{margin:0;background:var(--stone);color:var(--dk-2);
+  font:400 15px/1.62 var(--body);-webkit-font-smoothing:antialiased}
+h1,h2,h3{margin:0;font-family:var(--sans);font-weight:800;letter-spacing:-.025em;
+  line-height:1.15;color:var(--dk);font-style:normal}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.num,.yr,time{font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:3px}
 
-      <div class="flex flex-wrap items-center gap-2 text-xs font-mono">
-        <a href="index.html" class="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-200 transition">
-          ← Back to Portfolio
-        </a>
-        <a href="assets/Onwe-Francis-Chiemerie-Resume.pdf" target="_blank" class="px-4 py-2 rounded-xl bg-[#e8b84b] hover:bg-[#d9a441] text-black font-bold transition">
-          Open / Print PDF
-        </a>
-        <a href="assets/Onwe-Francis-Chiemerie-Resume.pdf" download class="px-4 py-2 rounded-xl bg-[#bfe3cf] hover:bg-[#fbfaf6] text-black font-bold transition">
-          Download PDF
-        </a>
-      </div>
+/* ============ control bar ============ */
+.bar{position:sticky;top:0;z-index:40;background:var(--obsidian);
+  border-bottom:1px solid var(--line-d)}
+.bar .in{max-width:1000px;margin:0 auto;padding:13px 26px;display:flex;align-items:center;gap:18px}
+.lk{display:flex;align-items:center;gap:11px;text-decoration:none;flex:none}
+.lk .tile{width:38px;height:38px;border-radius:10px;flex:none;display:grid;place-items:center;
+  background:var(--slate);border:1px solid var(--line-d2);transition:border-color var(--t) var(--e)}
+.lk:hover .tile{border-color:rgba(232,184,75,.6)}
+.lk .tile svg{width:25px;height:25px}
+.wm{display:block;font:800 13.5px/1 var(--sans);letter-spacing:.22em;color:#fff}
+.tg{display:block;font:400 8px/1.4 var(--mono);letter-spacing:.15em;text-transform:uppercase;
+  color:var(--ink-3);margin-top:4px}
+.jump{display:flex;gap:3px;margin-left:12px}
+.jump a{text-decoration:none;color:var(--ink-3);font:500 12.5px/1 var(--body);
+  padding:9px 11px;border-radius:7px;transition:color var(--t) var(--e),background var(--t) var(--e)}
+.jump a:hover{color:var(--gold);background:rgba(255,255,255,.05)}
+.bar .acts{display:flex;gap:9px;margin-left:auto;flex:none}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;white-space:nowrap;
+  font:600 13px/1 var(--body);padding:11px 15px;border-radius:8px;border:1px solid transparent;
+  transition:background var(--t) var(--e),border-color var(--t) var(--e),
+             color var(--t) var(--e),transform var(--t) var(--e)}
+.btn:hover{transform:translateY(-2px)}
+.b-gold{background:var(--gold);color:#0B1409;font-weight:700}
+.b-gold:hover{background:var(--gold-h)}
+.b-wire{border-color:var(--line-d2);color:var(--ink)}
+.b-wire:hover{border-color:var(--mint);color:var(--mint)}
+@media(max-width:960px){.jump{display:none}}
+@media(max-width:680px){.bar .in{flex-wrap:wrap;gap:12px}
+  .bar .acts{margin-left:0;width:100%;flex-wrap:wrap}
+  .lk .tg{display:none}}
+@media(max-width:430px){.bar .acts .btn{flex:1 1 auto;justify-content:center;padding:11px 10px}}
+
+/* ============ focus lens ============ */
+.lens{background:var(--slate);border-bottom:1px solid var(--line-d)}
+.lens .in{max-width:1000px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;
+  gap:12px;flex-wrap:wrap}
+.lens .lbl{font:500 10px/1 var(--mono);letter-spacing:.17em;text-transform:uppercase;color:#8DA29A}
+.lens .grp{display:flex;gap:5px;flex-wrap:wrap}
+.lens button.f{font:500 12px/1 var(--body);padding:8px 13px;border-radius:7px;
+  border:1px solid var(--line-d2);color:var(--ink-3);
+  transition:border-color var(--t) var(--e),color var(--t) var(--e),background var(--t) var(--e)}
+.lens button.f:hover{color:var(--ink);border-color:var(--mint)}
+.lens button.f[aria-pressed="true"]{background:var(--gold);color:#0B1409;border-color:var(--gold);font-weight:600}
+.lens .cp{display:flex;gap:7px;margin-left:auto}
+.lens button.c{font:500 11px/1 var(--mono);padding:8px 12px;border-radius:7px;
+  border:1px solid var(--line-d2);color:var(--ink-3);
+  transition:border-color var(--t) var(--e),color var(--t) var(--e)}
+.lens button.c:hover{border-color:var(--mint);color:var(--mint)}
+.lens button.c.done{border-color:var(--gold);color:var(--gold)}
+@media(max-width:680px){.lens .cp{margin-left:0;width:100%}}
+
+/* ============ sheet ============ */
+.sheet{max-width:1000px;margin:30px auto 70px;background:var(--paper);
+  border:1px solid var(--line-l);border-radius:4px;padding:52px 58px 58px;
+  box-shadow:0 30px 70px -40px rgba(14,26,20,.55)}
+@media(max-width:760px){.sheet{margin:16px 12px 40px;padding:30px 22px 36px}}
+
+.head{border-bottom:2px solid var(--dk);padding-bottom:20px}
+h1{font-size:clamp(1.7rem,4vw,2.3rem);letter-spacing:-.035em;text-transform:uppercase}
+.role{margin:10px 0 0;font:500 14px/1.6 var(--sans);color:var(--dk-2);letter-spacing:.01em}
+.meta{margin:14px 0 0;font:400 12.5px/1.9 var(--mono);color:var(--dk-3);
+  display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline}
+.meta a{color:var(--dk-2);text-decoration:none;border-bottom:1px solid var(--line-l2)}
+.meta a:hover{color:#7A5F13;border-bottom-color:#7A5F13}
+.meta .sep{color:var(--dk-3)}
+
+h2{font-size:12px;letter-spacing:.19em;text-transform:uppercase;font-weight:700;
+  margin:34px 0 0;padding-bottom:7px;border-bottom:1px solid var(--line-l);
+  display:flex;align-items:center;gap:11px}
+h2::before{content:"";width:17px;height:2px;background:var(--gold);transform:rotate(-28deg);flex:none}
+.sum{margin:16px 0 0}
+.sum p{margin:0 0 11px}
+.sum p:last-child{margin-bottom:0}
+.rule-note{padding:13px 16px;border-left:2px solid var(--gold);background:rgba(232,184,75,.08);
+  border-radius:0 6px 6px 0}
+.rule-note b{color:var(--dk);font-weight:600}
+
+.entry{margin-top:19px;break-inside:avoid;page-break-inside:avoid}
+.entry h3{font-size:15.5px;font-weight:700;letter-spacing:-.012em}
+.entry .org{display:block;margin-top:4px;font:400 12.5px/1.6 var(--mono);color:var(--dk-3)}
+.entry .yr{display:block;margin-top:3px;font:400 12px/1.6 var(--mono);color:var(--dk-3)}
+.entry ul{list-style:none;margin:11px 0 0;padding:0}
+.entry li{position:relative;padding-left:17px;margin-bottom:7px;font-size:14.4px}
+.entry li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:2px;
+  background:var(--gold);transform:rotate(-28deg)}
+.entry li b{color:var(--dk);font-weight:600}
+
+/* skills: 4 full-width ATS-safe rows */
+.skills{margin:16px 0 0;border-top:1px solid var(--line-l)}
+.skills>div{display:grid;grid-template-columns:188px 1fr;gap:18px;padding:11px 0;
+  border-bottom:1px solid var(--line-l);break-inside:avoid}
+.skills dt{font:600 11px/1.7 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--dk-3)}
+.skills dd{margin:0;font-size:14.3px}
+@media(max-width:620px){.skills>div{grid-template-columns:1fr;gap:4px}}
+
+.creds{list-style:none;margin:15px 0 0;padding:0}
+.creds li{position:relative;padding-left:17px;margin-bottom:8px;font-size:14.3px;break-inside:avoid}
+.creds li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:2px;
+  background:var(--gold);transform:rotate(-28deg)}
+.creds b{color:var(--dk);font-weight:600}
+
+.foot{margin-top:38px;padding-top:16px;border-top:1px solid var(--line-l);
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font:400 10.5px/1.7 var(--mono);color:var(--dk-3);letter-spacing:.04em}
+
+.hidden{display:none!important}
+#toast{position:fixed;left:50%;bottom:24px;z-index:60;transform:translate(-50%,16px);
+  background:var(--gold);color:#0B1409;font:600 13px/1 var(--body);padding:12px 18px;
+  border-radius:9px;opacity:0;pointer-events:none;
+  transition:opacity var(--t) var(--e),transform var(--t) var(--e)}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+
+.entry .yr,.meta a.num,.creds .num,.num{font-variant-numeric:tabular-nums}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
+}
+
+/* ============ A4 print ============ */
+@page{ size:A4 portrait; margin:14mm 14mm 16mm 14mm; }
+@media print{
+  .bar,.lens,#toast{display:none!important}
+  html,body{background:#fff!important;color:#000!important}
+  body{font-size:9.9pt;line-height:1.42}
+  .sheet{max-width:none;margin:0;padding:0;border:0;border-radius:0;
+    background:#fff!important;box-shadow:none}
+  h1,h2,h3,.entry li b,.creds b,.rule-note b{color:#000!important}
+  .role,.sum,.entry li,.skills dd,.creds li{color:#1a1a1a!important}
+  .meta,.entry .org,.entry .yr,.skills dt,.foot{color:#333!important}
+  .meta a{color:#000!important;border-bottom:0}
+  h1{font-size:19pt}
+  h2{font-size:8.6pt;margin:13pt 0 0;border-bottom:.6pt solid #999;
+     page-break-after:avoid;break-after:avoid}
+  h2::before{background:#000!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .entry{margin-top:9pt;page-break-inside:avoid;break-inside:avoid}
+  .entry h3{font-size:10.6pt;page-break-after:avoid;break-after:avoid}
+  .entry li,.creds li{margin-bottom:2.6pt;font-size:9.7pt;padding-left:11pt}
+  .entry li::before,.creds li::before{background:#000!important;width:5pt;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .head{border-bottom:1.2pt solid #000}
+  .rule-note{border-left:1.2pt solid #000;background:transparent!important;padding:5pt 0 5pt 9pt}
+  .skills>div{grid-template-columns:150pt 1fr;padding:4.4pt 0;
+    border-bottom:.4pt solid #ccc;page-break-inside:avoid}
+  .skills{border-top:.4pt solid #ccc}
+  .skills dd{font-size:9.6pt}
+  .foot{margin-top:14pt;border-top:.4pt solid #ccc;font-size:7.6pt}
+  .hidden{display:revert!important}   /* print every track regardless of the on-screen lens */
+  a[href]::after{content:""}
+}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="in">
+    <a class="lk" href="/">
+      <span class="tile">
+        <svg viewBox="0 0 100 100" aria-label="ONWE — Ringswipe">
+          <circle cx="50" cy="50" r="35" fill="none" stroke="#BFE3CF" stroke-width="6" stroke-dasharray="13 8"/>
+          <circle cx="50" cy="50" r="23" fill="none" stroke="#D9A441" stroke-width="6" stroke-dasharray="9 7"/>
+          <rect x="6" y="44.5" width="70" height="8" fill="#E8B84B" transform="rotate(-28 50 50)"/>
+        </svg>
+      </span>
+      <span><span class="wm">ONWE</span><span class="tg">works that own their claims</span></span>
+    </a>
+    <nav class="jump">
+      <a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#credentials">Credentials</a>
+    </nav>
+    <div class="acts">
+      <a class="btn b-wire" href="/">← Portfolio</a>
+      <a class="btn b-wire" href="/assets/Onwe-Francis-Chiemerie-Resume.pdf"
+         target="_blank" rel="noopener">View / Print PDF ↗</a>
+      <a class="btn b-gold" href="/assets/Onwe-Francis-Chiemerie-Resume.pdf" download="Onwe-Francis-Chiemerie-Resume.pdf">Download PDF ↓</a>
     </div>
+  </div>
+</div>
+
+<div class="lens">
+  <div class="in">
+    <span class="lbl">Focus lens</span>
+    <div class="grp">
+      <button class="f" data-track="all" aria-pressed="true">All Tracks</button>
+      <button class="f" data-track="reg" aria-pressed="false">Regulatory &amp; Systems</button>
+      <button class="f" data-track="eng" aria-pressed="false">Engineering &amp; Writing</button>
+    </div>
+    <div class="cp">
+      <button class="c" data-copy="francis.onwe@outlook.com" data-label="Copy Email">Copy Email</button>
+      <button class="c" data-copy="+234 812 882 8214" data-label="Copy Phone">Copy Phone</button>
+    </div>
+  </div>
+</div>
+
+<main class="sheet">
+  <header class="head">
+    <h1>Onwe Francis Chiemerie</h1>
+    <p class="role">Regulatory Affairs Officer &nbsp;·&nbsp; Compliance Software Architect &nbsp;·&nbsp; Petroleum Engineer</p>
+    <p class="meta">
+      <span>Lagos, Nigeria</span><span class="sep">·</span>
+      <a href="tel:+2348128828214" class="num">+234 812 882 8214</a><span class="sep">·</span>
+      <a href="mailto:francis.onwe@outlook.com">francis.onwe@outlook.com</a><span class="sep">·</span>
+      <a href="https://www.linkedin.com/in/onwe-francis-chiemerie-189285237/" target="_blank" rel="noopener">linkedin.com/in/onwe-francis-chiemerie</a><span class="sep">·</span>
+      <a href="https://github.com/onwefrancis" target="_blank" rel="noopener">github.com/onwefrancis</a><span class="sep">·</span>
+      <a href="https://onwefrancis.pages.dev" target="_blank" rel="noopener">onwefrancis.pages.dev</a><span class="sep">·</span>
+      <a href="https://concise-specialist-1a4.notion.site/Francis-Onwe-Technical-Writer-Petroleum-Engineer-3c100baf54788172a9a1fc9423f44cef" target="_blank" rel="noopener">Writing archive</a>
+    </p>
   </header>
 
-  <main class="max-w-6xl mx-auto p-4 sm:p-6">
-    <div class="rounded-2xl overflow-hidden border border-white/10 bg-black shadow-2xl">
-      <iframe
-        src="assets/Onwe-Francis-Chiemerie-Resume.pdf"
-        title="Onwe Francis Chiemerie Official Resume PDF"
-        class="w-full h-[82vh] bg-white"
-      ></iframe>
+  <h2>Professional Summary</h2>
+  <div class="sum">
+    <p>Regulatory Affairs Officer at a Lagos pharmaceutical manufacturer, managing 100+ NAFDAC
+    product records across registrations, renewals, import permits and listing certificates —
+    and the sole architect of the compliance system that now runs them in production.</p>
+    <p>Petroleum Engineering graduate (B.Eng., Second Class Upper, 3.55/5.00 CGPA, FUTO) with
+    upstream regulatory experience at NUPRC and drilling-fluids laboratory research, combined
+    with 3+ years of professional technical writing that turns complex engineering and AI subject
+    matter into clear, accurate English.</p>
+    <p class="rule-note"><b>Operating rule:</b> every system must be traceable, evidence-based,
+    and honest about what it can prove.</p>
+  </div>
+
+  <h2 id="experience">Professional Experience</h2>
+
+  <div class="entry" data-track="reg">
+    <h3>Regulatory Affairs Officer</h3>
+    <span class="org">NCI Pharm Chem. Ind. · Lagos, Nigeria</span>
+    <span class="yr">2026 – Present</span>
+    <ul>
+      <li>Manage regulatory tracking for <b>100+ products</b> across NAFDAC registrations, renewals,
+      import permits and listing certificates, maintaining accurate manufacturer, supplier, expiry
+      and status records.</li>
+      <li><b>Solely architected, built and shipped NCI RIMS</b>, the in-house GxP compliance
+      operating system now in active production use across the regulatory function.</li>
+      <li>Prepare and review regulatory submissions — product artwork, packaging, CTD dossier
+      documentation and supporting evidence — reconciling product and company data across records
+      to eliminate recurring inconsistencies.</li>
+      <li>Maintain expiry trackers that initiate renewals at least <b>90+ days</b> ahead of
+      deadlines, and close documentation gaps with internal teams, manufacturers and regulators
+      within defined turnaround times.</li>
+    </ul>
+  </div>
+
+  <div class="entry" data-track="eng">
+    <h3>Production Engineering Intern</h3>
+    <span class="org">Nigerian Upstream Petroleum Regulatory Commission (NUPRC) · Nigeria</span>
+    <span class="yr">Oct 2024 – Feb 2025</span>
+    <ul>
+      <li>Reviewed and analysed 10+ operator production reports for compliance with regulatory
+      requirements and production targets, supporting reservoir-performance evaluation and
+      management reporting.</li>
+      <li>Reviewed 10+ technical documents including field-development plans (FDP) and operator
+      work programs, contributing to technical review and documentation workflows.</li>
+      <li>Prepared regulatory decision-support reports and presentations for senior engineers,
+      translating technical findings into clear material for review meetings.</li>
+      <li>Applied provisions of the Petroleum Industry Act (PIA) to upstream activities.</li>
+    </ul>
+  </div>
+
+  <div class="entry" data-track="eng">
+    <h3>Freelance Technical &amp; Content Writer</h3>
+    <span class="org">Remote</span>
+    <span class="yr">2023 – Present</span>
+    <ul>
+      <li>Develop research-backed long-form technical explainers, structured scripts and
+      SEO-optimised guides, translating complex engineering and AI topics into clear, engaging
+      written English.</li>
+      <li>Conduct in-depth research with primary-source verification; structure outlines, narrative
+      hooks and concise arguments for audience retention.</li>
+      <li>Maintain a published Notion technical writing archive as a public record of the work.</li>
+    </ul>
+  </div>
+
+  <div class="entry" data-track="eng">
+    <h3>Research Assistant</h3>
+    <span class="org">Petroleum Laboratory, Federal University of Technology · Owerri, Nigeria</span>
+    <span class="yr">Aug 2023 – Apr 2024</span>
+    <ul>
+      <li>Conducted 15+ drilling-fluid laboratory tests (rheology, mud weight, fluid loss, pH),
+      generating technical data for drilling-performance and wellbore-stability evaluation.</li>
+      <li>Improved laboratory data repeatability by <b>~20%</b> by standardising calibration, test
+      documentation and data-recording procedures.</li>
+    </ul>
+  </div>
+
+  <h2 id="projects">Projects</h2>
+
+  <div class="entry" data-track="reg">
+    <h3>NCI RIMS — Regulatory Inventory Management System</h3>
+    <span class="org">NCI Pharm Chem. Ind. · In active production use</span>
+    <span class="yr">2026</span>
+    <ul>
+      <li>Sole designer and builder of an in-house GxP compliance operating system managing
+      <b>100+ NAFDAC</b> pharmaceutical product records.</li>
+      <li>Engineered automated expiry tracking radars, a controlled-document vault with approvals,
+      a QR-verified digital signature letter studio, port-clearance demurrage countdowns,
+      role-based access control, and an append-only audit trail (21 CFR Part 11 supportable).</li>
+      <li>Stack: Next.js 15, TypeScript, Supabase (PostgreSQL with RLS), Auth RBAC, Playwright
+      end-to-end tests, PWA offline support.</li>
+    </ul>
+  </div>
+
+  <div class="entry" data-track="reg">
+    <h3>Aptframe — AI Prompt Intelligence &amp; Diagnostics SaaS</h3>
+    <span class="org">B2B prosumer SaaS · Live on Cloudflare edge</span>
+    <span class="yr">2026</span>
+    <ul>
+      <li>Designed, built and deployed a production SaaS workspace that reduces AI prompt drift via
+      a five-dimension health diagnostic rubric scored 0–100.</li>
+      <li>Features one-click model pre-fills to ChatGPT, Claude and Gemini, 30+ Supabase templates,
+      and automated Polar webhook subscription billing ($9.00/mo Pro Founder plan).</li>
+      <li>Stack: Next.js 16 (Turbopack), OpenNext, Cloudflare Edge Workers, Supabase RLS, Gemini API.
+      Live at aptframe-app.onwefrancis123.workers.dev</li>
+    </ul>
+  </div>
+
+  <div class="entry" data-track="reg eng">
+    <h3>ToolForge — Programmatic SEO Creator Utility Suite</h3>
+    <span class="org">Creator AI &amp; micro-utility engine · Live on Cloudflare Pages</span>
+    <span class="yr">2026</span>
+    <ul>
+      <li>Creator utility suite with six dedicated SEO routes, including an AI Text Humanizer built
+      on an 80+ entry cliché dictionary, a YouTube title generator and a LinkedIn formatter.</li>
+      <li>Schema.org rich snippets validated in Google Search Console, Google AdSense display units,
+      and a Manifest V3 Chrome extension.</li>
+      <li>Live at toolforge-app.pages.dev</li>
+    </ul>
+  </div>
+
+  <h2>Education</h2>
+  <div class="entry" data-track="eng">
+    <h3>B.Eng. Petroleum Engineering — Second Class Upper (CGPA 3.55/5.00)</h3>
+    <span class="org">Federal University of Technology, Owerri (FUTO) · Owerri, Nigeria</span>
+    <span class="yr">Aug 2020 – Oct 2025</span>
+    <ul>
+      <li><b>Relevant coursework:</b> drilling technology; reservoir engineering; petroleum
+      production engineering; well completion and stimulation; surface production operations.</li>
+      <li><b>Final-year research:</b> laboratory investigation of nanoparticle retention in porous
+      media and permeability alteration in nanoparticle-assisted enhanced oil recovery (EOR).</li>
+    </ul>
+  </div>
+
+  <h2>Skills &amp; Tools</h2>
+  <dl class="skills">
+    <div>
+      <dt>Engineering &amp; Regulatory</dt>
+      <dd>NAFDAC dossiers · CTD format · 21 CFR Part 11 · GxP documentation · drilling fluids ·
+      well integrity · HSE (OSHA)</dd>
     </div>
-  </main>
+    <div>
+      <dt>Software &amp; Edge</dt>
+      <dd>Next.js 16 · TypeScript · React · Cloudflare Workers and Pages · Supabase PostgreSQL
+      with RLS · Playwright</dd>
+    </div>
+    <div>
+      <dt>Data &amp; AI Systems</dt>
+      <dd>Microsoft Excel (advanced) · production analytics · Google Gemini · OpenAI ·
+      prompt diagnostics rubrics</dd>
+    </div>
+    <div>
+      <dt>Writing &amp; Editorial</dt>
+      <dd>Technical explainers · long-form scripts · SEO structuring · editing ·
+      fact verification against primary sources</dd>
+    </div>
+  </dl>
+
+  <h2 id="credentials">Certifications, Affiliations &amp; Leadership</h2>
+  <ul class="creds">
+    <li><b>GMNSE</b> — Graduate Member, Nigerian Society of Engineers</li>
+    <li><b>P-COREN</b> — Pupil Member, Council for the Regulation of Engineering in Nigeria</li>
+    <li><b>Society of Petroleum Engineers (SPE)</b> — Student / Young Professional Member, SPE FUTO Chapter</li>
+    <li><b>Executive President, Nigerian Universities Engineering Student Association (NUESA), FUTO
+    Chapter</b> — elected twice, <span class="num">2023–2025</span>; School of Engineering and
+    Engineering Technology, Federal University of Technology, Owerri</li>
+    <li><b>Health, Safety &amp; Environment (HSE) Levels 1–3 (OSHA)</b> — <span class="num">Feb 2023</span></li>
+    <li><b>National Banksman &amp; Industrial Rigging</b> — OTSESO Oil and Gas Limited ·
+    126 hours · issued <span class="num">Jul 2024</span>, valid until <span class="num">Jul 2028</span></li>
+    <li><b>Google AI Essentials</b> — Google via Coursera</li>
+  </ul>
+
+  <div class="foot">
+    <span>ONWE — works that own their claims</span>
+    <span>Onwe Francis Chiemerie © 2026 · Lagos, Nigeria</span>
+    <span>Ref ONWE/2026/001</span>
+  </div>
+</main>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+"use strict";
+var $  = function(s){return document.querySelector(s)};
+var $$ = function(s){return [].slice.call(document.querySelectorAll(s))};
+
+/* Print now opens the uploaded CV in the browser's PDF viewer, which carries its
+   own print control. The @media print rules below remain as a fallback for anyone
+   who hits Ctrl+P on this page directly. */
+
+/* ---------- focus lens ---------- */
+var entries = $$(".entry[data-track]");
+$$(".lens button.f").forEach(function(b){
+  b.addEventListener("click", function(){
+    var want = b.getAttribute("data-track");
+    $$(".lens button.f").forEach(function(x){
+      x.setAttribute("aria-pressed", x === b ? "true" : "false");
+    });
+    entries.forEach(function(e){
+      var t = e.getAttribute("data-track").split(" ");
+      e.classList.toggle("hidden", want !== "all" && t.indexOf(want) === -1);
+    });
+  });
+});
+
+/* ---------- copy ---------- */
+var toast = $("#toast"), timer;
+function say(m){
+  toast.textContent = m; toast.classList.add("show");
+  clearTimeout(timer); timer = setTimeout(function(){toast.classList.remove("show")}, 1900);
+}
+function copy(text){
+  if(navigator.clipboard && isSecureContext) return navigator.clipboard.writeText(text);
+  return new Promise(function(res,rej){
+    var ta = document.createElement("textarea");
+    ta.value = text; ta.setAttribute("readonly",""); ta.style.position="fixed"; ta.style.opacity="0";
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand("copy"); res(); }catch(e){ rej(e); }
+    document.body.removeChild(ta);
+  });
+}
+$$("[data-copy]").forEach(function(b){
+  b.addEventListener("click", function(){
+    copy(b.getAttribute("data-copy")).then(function(){
+      var lab = b.getAttribute("data-label");
+      b.textContent = "Copied ✓"; b.classList.add("done");
+      say(lab.replace("Copy ","") + " copied to clipboard");
+      setTimeout(function(){ b.textContent = lab; b.classList.remove("done"); }, 1900);
+    }).catch(function(){ say("Press Ctrl+C to copy"); });
+  });
+});
+})();
+</script>
 </body>
 </html>
