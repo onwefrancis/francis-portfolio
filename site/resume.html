@@ -204,7 +204,8 @@ h2::before{content:"";width:17px;height:2px;background:var(--gold);transform:rot
     </nav>
     <div class="acts">
       <a class="btn b-wire" href="/">← Portfolio</a>
-      <button class="btn b-wire" id="printBtn">Print / Save PDF</button>
+      <a class="btn b-wire" href="/assets/Onwe-Francis-Chiemerie-Resume.pdf"
+         target="_blank" rel="noopener">View / Print PDF ↗</a>
       <a class="btn b-gold" href="/assets/Onwe-Francis-Chiemerie-Resume.pdf" download="Onwe-Francis-Chiemerie-Resume.pdf">Download PDF ↓</a>
     </div>
   </div>
@@ -426,7 +427,9 @@ h2::before{content:"";width:17px;height:2px;background:var(--gold);transform:rot
 var $  = function(s){return document.querySelector(s)};
 var $$ = function(s){return [].slice.call(document.querySelectorAll(s))};
 
-$("#printBtn").addEventListener("click", function(){ window.print(); });
+/* Print now opens the uploaded CV in the browser's PDF viewer, which carries its
+   own print control. The @media print rules below remain as a fallback for anyone
+   who hits Ctrl+P on this page directly. */
 
 /* ---------- focus lens ---------- */
 var entries = $$(".entry[data-track]");
